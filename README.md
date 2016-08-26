@@ -99,4 +99,30 @@ local pay
 #### query the Station id
 - almost the same as query
 
-## 
+## Database
+- USE SQLITE as the database
+- db TRAIN
+  - for each train
+  add a table<br>
+ 
+|Rank|PointTo|Station|Bitmap1|Bitmap2|Bitmap3|Bitmap4|Bitmap5|Bitmap6|Bitmap7|Bitmap8|Bitmap9|Bitmap10|
+|----|----|----|----|-----|----|----|----|----|----|----|----|----|
+
+- db MESSAGE
+- table STATION_INFO
+
+|Station|Train1|Train2|Train3|Train4|Train5|Train6|Train7|Train8|Train9|Train10|Train11|Train12|
+|----|----|----|----|-----|----|----|----|----|----|----|----|----|
+
+- table PASSENGER_INFO
+
+|name|ID Card SHA|Tel|TYPE|SEX|Univ.|Code_Stu|Grade|Interval1|Interval2|
+|----|----|----|----|---|----|----|----|----|---|
+
+- table USER
+
+|USER NAME|Password SHA|Authority|
+|----|----|----|----|
+
+## Communicate TCP/IP
+
