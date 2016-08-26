@@ -105,24 +105,39 @@ local pay
   - for each train
   add a table<br>
  
-|Rank|PointTo|Station|Bitmap1|Bitmap2|Bitmap3|Bitmap4|Bitmap5|Bitmap6|Bitmap7|Bitmap8|Bitmap9|Bitmap10|
-|----|----|----|----|-----|----|----|----|----|----|----|----|----|
+|Rank KEY|PointTo|PointFrom|Station|Bitmap1|Bitmap2|Bitmap3|Bitmap4|Bitmap5|Bitmap6|Bitmap7|Bitmap8|Bitmap9|Bitmap10|
+|----|----|----|----|-----|----|----|----|----|----|----|----|----|----|----|
 
 - db MESSAGE
 - table STATION_INFO
 
-|Station|Train1|Train2|Train3|Train4|Train5|Train6|Train7|Train8|Train9|Train10|Train11|Train12|
+|Station KEY|Train1|Train2|Train3|Train4|Train5|Train6|Train7|Train8|Train9|Train10|Train11|Train12|
 |----|----|----|----|-----|----|----|----|----|----|----|----|----|
 
 - table PASSENGER_INFO
 
-|name|ID Card SHA|Tel|TYPE|SEX|Univ.|Code_Stu|Grade|Interval1|Interval2|
-|----|----|----|----|---|----|----|----|----|---|
+|name|ID Card SHA KEY|Tel|TYPE|SEX|Univ.|Code_Stu|Grade|Interval1|Interval2|
+|----|----|----|----|---|----|----|----|----|----|
 
 - table USER
 
-|USER NAME|Password SHA|Authority|
-|----|----|----|----|
+|USER NAME KEY|Password SHA|Authority|Virtual account|Contact NUM|Contact ID 1|Contact ID 2|Contact ID 3|Contact ID 4|Contact ID 5|Contact ID 6|
+|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
 
 ## Communicate TCP/IP
-
+### Login
+### Register
+### Query
+### Passenger Update
+#### Update Password
+#### Update Contact
+#### Update TEL
+### buy
+### pay
+### add a train
+### del a train
+### modify train info
+#### del the station
+#### add a station before
+#### add a station behind
+## Interface
