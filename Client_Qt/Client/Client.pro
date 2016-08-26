@@ -16,4 +16,14 @@ SOURCES += main.cpp\
         mainwindow.cpp
 
 HEADERS  += mainwindow.h \
-    basic.h
+    basic.h \
+    communicate.h \
+    pay.h \
+    confirm.h \
+    buy.h \
+    register.h \
+    login.h \
+    quickquery.h \
+    publicbaseclass.h \
+    mainquery.h \
+    info.h
