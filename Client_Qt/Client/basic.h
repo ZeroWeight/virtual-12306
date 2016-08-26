@@ -6,4 +6,7 @@
 #include <QString>
 #include <QList>
 #include <QApplication>
+#include <QMainWindow>
+#define UndefArgument void
+#define UndefTypeValue
 #endif // BASIC_H
