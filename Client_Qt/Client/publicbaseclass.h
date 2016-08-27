@@ -6,14 +6,9 @@ public slots:
     virtual void show(){
         QMainWindow::show();
     }
-    inline void _GetStatus(bool b){
-        isLogIn=b;
-    }
-signals:
-    void isLogIn_(void);
-
-private:
+protected:
     bool isLogIn;
     PublicBaseClass* calling_model;
+    //other necessary info
 };
 #endif // PUBLICBASECLASS_H

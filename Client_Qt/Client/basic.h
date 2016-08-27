@@ -7,6 +7,7 @@
 #include <QList>
 #include <QApplication>
 #include <QMainWindow>
+#include <QPushButton>
 #define UndefArgument void
 #define UndefTypeValue
 #endif // BASIC_H
