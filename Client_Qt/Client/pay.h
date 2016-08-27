@@ -6,7 +6,6 @@ class Pay:public PublicBaseClass{
 public slots:
     UndefArgument _Comfirm(UndefArgument);
 signals:
-    void MainQuery_(UndefArgument);
     void Communicate_(UndefArgument);
 };
 

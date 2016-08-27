@@ -26,4 +26,4 @@ HEADERS  += mainwindow.h \
     quickquery.h \
     publicbaseclass.h \
     mainquery.h \
-    info.h
+    update.h

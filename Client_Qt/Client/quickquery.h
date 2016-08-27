@@ -7,7 +7,7 @@ signals:
     void LogIn_(UndefArgument);
     void Register_(UndefArgument);
     void Communicate_(UndefArgument);
-
+    void Update(UndefArgument);
 };
 
 #endif // QUICKQUERY_H
