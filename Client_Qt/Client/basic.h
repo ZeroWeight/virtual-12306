@@ -8,10 +8,6 @@
 #include <QApplication>
 #include <QMainWindow>
 #include <QPushButton>
-#include <QLabel>
-#include <QDateEdit>
-#include <QComboBox>
-#include <QCalendarWidget>
 #include <cstring>
 #include <cassert>
 #define UndefArgument void
@@ -20,10 +16,10 @@
 #define BUFFERSIZE 64
 #define SHORTBUFFERSIZE 16
 #define ACK "0123456879"
-enum class MODE_S{
+enum MODE_S{
     NONE=0,
 };
-enum class MODE_R{
+enum MODE_R{
     NONE=0,
 };
 

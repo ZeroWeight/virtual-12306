@@ -37,7 +37,7 @@ void Communicate::Listen(){
         message=nullptr;
         sending=false;
     }
-    else if(mode!=MODE_R::NONE){
+    else if(mode){
         buffer=new char[MAXBUFFERSIZE];
         socket->read(buffer,MAXBUFFERSIZE);
         DeCoding();
