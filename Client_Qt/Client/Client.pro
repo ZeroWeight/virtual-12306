@@ -14,7 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    communicate.cpp
+    communicate.cpp \
+    box.cpp \
+    date.cpp \
+    quickquery.cpp \
+    supertag.cpp
 
 HEADERS  += mainwindow.h \
     basic.h \
@@ -28,4 +32,8 @@ HEADERS  += mainwindow.h \
     publicbaseclass.h \
     mainquery.h \
     update.h \
-    decoding.hpp
+    decoding.hpp \
+    box.h \
+    date.h \
+    station.hpp \
+    supertag.h
