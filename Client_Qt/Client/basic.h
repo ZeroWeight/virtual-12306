@@ -17,10 +17,10 @@
 #define SHORTBUFFERSIZE 16
 #define ACK "0123456879"
 enum MODE_S{
-    NONE=0,
+
 };
 enum MODE_R{
-    NONE=0,
+
 };
 
 class Message{
