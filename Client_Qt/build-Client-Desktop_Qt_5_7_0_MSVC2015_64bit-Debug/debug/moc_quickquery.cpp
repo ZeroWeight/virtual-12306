@@ -130,7 +130,7 @@ void QuickQuery::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
 }
 
 const QMetaObject QuickQuery::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_QuickQuery.data,
+    { &PublicBaseClass::staticMetaObject, qt_meta_stringdata_QuickQuery.data,
       qt_meta_data_QuickQuery,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
@@ -145,12 +145,12 @@ void *QuickQuery::qt_metacast(const char *_clname)
     if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_QuickQuery.stringdata0))
         return static_cast<void*>(const_cast< QuickQuery*>(this));
-    return QMainWindow::qt_metacast(_clname);
+    return PublicBaseClass::qt_metacast(_clname);
 }
 
 int QuickQuery::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = PublicBaseClass::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

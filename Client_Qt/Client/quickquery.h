@@ -4,7 +4,7 @@
 #include "date.h"
 #include "supertag.h"
 
-class QuickQuery : public QMainWindow
+class QuickQuery : public PublicBaseClass
 {
     Q_OBJECT
 private:
