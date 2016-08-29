@@ -3,7 +3,7 @@
 #include "box.h"
 #include "date.h"
 #include "supertag.h"
-
+#include "publicbaseclass.h"
 class QuickQuery : public PublicBaseClass
 {
     Q_OBJECT

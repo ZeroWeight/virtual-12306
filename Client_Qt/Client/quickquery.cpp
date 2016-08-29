@@ -1,7 +1,7 @@
 #include "quickquery.h"
 
 QuickQuery::QuickQuery(QWidget *parent)
-    : QMainWindow(parent)
+    : PublicBaseClass(parent)
 {
     box_from=new Box(this);
     box_to=new Box(this);
