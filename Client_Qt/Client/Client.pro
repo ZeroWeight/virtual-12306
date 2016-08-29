@@ -13,7 +13,8 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    communicate.cpp
 
 HEADERS  += mainwindow.h \
     basic.h \
@@ -26,4 +27,5 @@ HEADERS  += mainwindow.h \
     quickquery.h \
     publicbaseclass.h \
     mainquery.h \
-    update.h
+    update.h \
+    decoding.hpp

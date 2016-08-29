@@ -46,17 +46,3 @@ MainWindow::~MainWindow()
     _register->deleteLater();
     update->deleteLater();
 }
-/*
-pay.h
-pay.c
-PushButton
-size
-color
-..
-pay.c
-#include "pay.hpp"
-size
-QSize QGeo..
-QPushButton button;
-button.size=SizeOkButton
-SizeOkButton  <-- pay.hpp

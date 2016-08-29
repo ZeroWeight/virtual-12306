@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Communicate_t {
     QByteArrayData data[11];
-    char stringdata0[83];
+    char stringdata0[92];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,17 +34,17 @@ QT_MOC_LITERAL(1, 12, 6), // "LogIn_"
 QT_MOC_LITERAL(2, 19, 0), // ""
 QT_MOC_LITERAL(3, 20, 10), // "MainQuery_"
 QT_MOC_LITERAL(4, 31, 8), // "Confirm_"
-QT_MOC_LITERAL(5, 40, 6), // "_Login"
-QT_MOC_LITERAL(6, 47, 9), // "_Register"
-QT_MOC_LITERAL(7, 57, 6), // "_Query"
-QT_MOC_LITERAL(8, 64, 4), // "_Buy"
-QT_MOC_LITERAL(9, 69, 8), // "_Confirm"
-QT_MOC_LITERAL(10, 78, 4) // "_Pay"
+QT_MOC_LITERAL(5, 40, 4), // "Send"
+QT_MOC_LITERAL(6, 45, 8), // "Message&"
+QT_MOC_LITERAL(7, 54, 7), // "message"
+QT_MOC_LITERAL(8, 62, 10), // "GetConnect"
+QT_MOC_LITERAL(9, 73, 11), // "LostConnect"
+QT_MOC_LITERAL(10, 85, 6) // "Listen"
 
     },
     "Communicate\0LogIn_\0\0MainQuery_\0Confirm_\0"
-    "_Login\0_Register\0_Query\0_Buy\0_Confirm\0"
-    "_Pay"
+    "Send\0Message&\0message\0GetConnect\0"
+    "LostConnect\0Listen"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,7 +54,7 @@ static const uint qt_meta_data_Communicate[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -62,17 +62,15 @@ static const uint qt_meta_data_Communicate[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x06 /* Public */,
-       3,    0,   60,    2, 0x06 /* Public */,
-       4,    0,   61,    2, 0x06 /* Public */,
+       1,    0,   49,    2, 0x06 /* Public */,
+       3,    0,   50,    2, 0x06 /* Public */,
+       4,    0,   51,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,   62,    2, 0x0a /* Public */,
-       6,    0,   63,    2, 0x0a /* Public */,
-       7,    0,   64,    2, 0x0a /* Public */,
-       8,    0,   65,    2, 0x0a /* Public */,
-       9,    0,   66,    2, 0x0a /* Public */,
-      10,    0,   67,    2, 0x0a /* Public */,
+       5,    1,   52,    2, 0x0a /* Public */,
+       8,    0,   55,    2, 0x08 /* Private */,
+       9,    0,   56,    2, 0x08 /* Private */,
+      10,    0,   57,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -80,9 +78,7 @@ static const uint qt_meta_data_Communicate[] = {
     QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 6,    7,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -99,12 +95,10 @@ void Communicate::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 0: _t->LogIn_(); break;
         case 1: _t->MainQuery_(); break;
         case 2: _t->Confirm_(); break;
-        case 3: _t->_Login(); break;
-        case 4: _t->_Register(); break;
-        case 5: _t->_Query(); break;
-        case 6: _t->_Buy(); break;
-        case 7: _t->_Confirm(); break;
-        case 8: _t->_Pay(); break;
+        case 3: _t->Send((*reinterpret_cast< Message(*)>(_a[1]))); break;
+        case 4: _t->GetConnect(); break;
+        case 5: _t->LostConnect(); break;
+        case 6: _t->Listen(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -132,7 +126,6 @@ void Communicate::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
             }
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject Communicate::staticMetaObject = {
@@ -160,13 +153,13 @@ int Communicate::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 7;
     }
     return _id;
 }

@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Pay_t {
-    QByteArrayData data[5];
-    char stringdata0[38];
+    QByteArrayData data[4];
+    char stringdata0[27];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,13 +30,12 @@ struct qt_meta_stringdata_Pay_t {
 static const qt_meta_stringdata_Pay_t qt_meta_stringdata_Pay = {
     {
 QT_MOC_LITERAL(0, 0, 3), // "Pay"
-QT_MOC_LITERAL(1, 4, 10), // "MainQuery_"
-QT_MOC_LITERAL(2, 15, 0), // ""
-QT_MOC_LITERAL(3, 16, 12), // "Communicate_"
-QT_MOC_LITERAL(4, 29, 8) // "_Comfirm"
+QT_MOC_LITERAL(1, 4, 12), // "Communicate_"
+QT_MOC_LITERAL(2, 17, 0), // ""
+QT_MOC_LITERAL(3, 18, 8) // "_Comfirm"
 
     },
-    "Pay\0MainQuery_\0\0Communicate_\0_Comfirm"
+    "Pay\0Communicate_\0\0_Comfirm"
 };
 #undef QT_MOC_LITERAL
 
@@ -46,22 +45,20 @@ static const uint qt_meta_data_Pay[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x06 /* Public */,
-       3,    0,   30,    2, 0x06 /* Public */,
+       1,    0,   24,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   31,    2, 0x0a /* Public */,
+       3,    0,   25,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void,
     QMetaType::Void,
 
  // slots: parameters
@@ -76,9 +73,8 @@ void Pay::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         Pay *_t = static_cast<Pay *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->MainQuery_(); break;
-        case 1: _t->Communicate_(); break;
-        case 2: _t->_Comfirm(); break;
+        case 0: _t->Communicate_(); break;
+        case 1: _t->_Comfirm(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -86,15 +82,8 @@ void Pay::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         void **func = reinterpret_cast<void **>(_a[1]);
         {
             typedef void (Pay::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Pay::MainQuery_)) {
-                *result = 0;
-                return;
-            }
-        }
-        {
-            typedef void (Pay::*_t)();
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Pay::Communicate_)) {
-                *result = 1;
+                *result = 0;
                 return;
             }
         }
@@ -127,26 +116,20 @@ int Pay::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 2;
     }
     return _id;
 }
 
 // SIGNAL 0
-void Pay::MainQuery_()
-{
-    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
-}
-
-// SIGNAL 1
 void Pay::Communicate_()
 {
-    QMetaObject::activate(this, &staticMetaObject, 1, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE
