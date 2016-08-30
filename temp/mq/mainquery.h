@@ -2,17 +2,22 @@
 #define MAINQUERY_H
 
 #include <QMainWindow>
+#include <QScrollArea>
 #include "box.h"
 #include "date.h"
 #include "supertag.h"
 #include "table.h"
 #include <QLabel>
 #include <QCheckBox>
+#include <QDebug>
+#define ZW_DEBUG
 class MainQuery : public QMainWindow
 {
     Q_OBJECT
 private:
     int count;
+    QScrollArea* table_a;
+    QWidget* table_w;
     QCheckBox* g;
     QCheckBox* d;
     QCheckBox* t;
@@ -32,11 +37,27 @@ private:
     SuperTag* log_out;
     SuperTag* reg;
     SuperTag* name;
+private slots:
+    void Reload(int rank,bool m);
 public:
     MainQuery(QWidget *parent = 0);
     ~MainQuery();
 public slots:
     void show();
+signals:
+    void Log_in();
+    void Name();
+    void Log_out();
+    void Register();
+    void Buy();
+    void Route();
+#ifdef ZW_DEBUG
+private slots:
+    void Debug(){
+        qDebug()<<"A signal emit";
+    }
+#endif
 };
+
 
 #endif // MAINQUERY_H
