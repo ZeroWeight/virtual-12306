@@ -7,6 +7,7 @@
 class Table:public QWidget{
     Q_OBJECT
 private:
+    int rank;
     bool price_hidden;
     QPushButton* button;
     QTableWidget* table;
@@ -16,9 +17,11 @@ private slots:
 signals:
     void Buy(QString);
     void Route(QString);
-    void Reload(bool);
+    void Reload(int,bool);
 public:
-    Table(QWidget *parent = 0);
+    Table(int rank=0,QWidget *parent = 0);
+    ~Table();
+public slots:
     void show();
 };
 

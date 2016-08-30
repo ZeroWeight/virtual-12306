@@ -14,7 +14,14 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainquery.cpp \
-    table.cpp
+    table.cpp \
+    box.cpp \
+    date.cpp \
+    supertag.cpp
 
 HEADERS  += mainquery.h \
-    table.h
+    table.h \
+    box.h \
+    date.h \
+    station.hpp \
+    supertag.h

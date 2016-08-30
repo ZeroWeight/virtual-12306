@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'mainquery.h'
+** Meta object code from reading C++ file 'supertag.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../mq/mainquery.h"
+#include "../../mq/supertag.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'mainquery.h' doesn't include <QObject>."
+#error "The header file 'supertag.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.7.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,27 +18,27 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_MainQuery_t {
+struct qt_meta_stringdata_SuperTag_t {
     QByteArrayData data[3];
     char stringdata0[16];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_MainQuery_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_SuperTag_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_MainQuery_t qt_meta_stringdata_MainQuery = {
+static const qt_meta_stringdata_SuperTag_t qt_meta_stringdata_SuperTag = {
     {
-QT_MOC_LITERAL(0, 0, 9), // "MainQuery"
-QT_MOC_LITERAL(1, 10, 4), // "show"
+QT_MOC_LITERAL(0, 0, 8), // "SuperTag"
+QT_MOC_LITERAL(1, 9, 5), // "Click"
 QT_MOC_LITERAL(2, 15, 0) // ""
 
     },
-    "MainQuery\0show\0"
+    "SuperTag\0Click\0"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_MainQuery[] = {
+static const uint qt_meta_data_SuperTag[] = {
 
  // content:
        7,       // revision
@@ -49,52 +49,62 @@ static const uint qt_meta_data_MainQuery[] = {
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
 
- // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x0a /* Public */,
+ // signals: name, argc, parameters, tag, flags
+       1,    0,   19,    2, 0x06 /* Public */,
 
- // slots: parameters
+ // signals: parameters
     QMetaType::Void,
 
        0        // eod
 };
 
-void MainQuery::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void SuperTag::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        MainQuery *_t = static_cast<MainQuery *>(_o);
+        SuperTag *_t = static_cast<SuperTag *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->show(); break;
+        case 0: _t->Click(); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        void **func = reinterpret_cast<void **>(_a[1]);
+        {
+            typedef void (SuperTag::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&SuperTag::Click)) {
+                *result = 0;
+                return;
+            }
         }
     }
     Q_UNUSED(_a);
 }
 
-const QMetaObject MainQuery::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_MainQuery.data,
-      qt_meta_data_MainQuery,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject SuperTag::staticMetaObject = {
+    { &QLabel::staticMetaObject, qt_meta_stringdata_SuperTag.data,
+      qt_meta_data_SuperTag,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *MainQuery::metaObject() const
+const QMetaObject *SuperTag::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *MainQuery::qt_metacast(const char *_clname)
+void *SuperTag::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_MainQuery.stringdata0))
-        return static_cast<void*>(const_cast< MainQuery*>(this));
-    return QMainWindow::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_SuperTag.stringdata0))
+        return static_cast<void*>(const_cast< SuperTag*>(this));
+    return QLabel::qt_metacast(_clname);
 }
 
-int MainQuery::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int SuperTag::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = QLabel::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
@@ -107,5 +117,11 @@ int MainQuery::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 1;
     }
     return _id;
+}
+
+// SIGNAL 0
+void SuperTag::Click()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

@@ -1,7 +1,9 @@
 #include "table.h"
+#include "QDebug"
 #include <QHeaderView>
 #include <QWidgetItem>
-Table::Table(QWidget *parent):QWidget(parent){
+Table::Table(int rank,QWidget *parent):QWidget(parent){
+    this->rank=rank;
     price_hidden=true;
     table=new QTableWidget(2,6,this);
     button=new QPushButton("Buy",this);
@@ -17,9 +19,9 @@ Table::Table(QWidget *parent):QWidget(parent){
     button->setGeometry((table->columnCount()-1)*table->columnWidth(0)+25,
                         12,150,75);
     table->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    table->setSelectionMode(QAbstractItemView::NoSelection);
     connect(table,SIGNAL(cellClicked(int,int)),this,SLOT(Details(int,int)));
     connect(button,SIGNAL(clicked(bool)),this,SLOT(Push()));
-    //
     table->setItem(0,0,new QTableWidgetItem("D51"));
 }
 void Table::show(){
@@ -37,13 +39,17 @@ void Table::Details(int row, int col){
                                table->rowCount()*table->rowHeight(0)+2);
             table->setRowHidden(1,false);
             price_hidden=false;
-            Reload(true);
+            Reload(rank,true);
         }
         else{
             table->setGeometry(0,0,table->columnCount()*table->columnWidth(0)+2,
                                (table->rowCount()-1)*table->rowHeight(0)+1);
             table->setRowHidden(1,true);
             price_hidden=true;
-            Reload(false);
+            Reload(rank,false);
         }
+}
+Table::~Table(){
+    delete table;
+    delete button;
 }
