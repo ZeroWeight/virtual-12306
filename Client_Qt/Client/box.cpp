@@ -1,9 +1,11 @@
 #include "box.h"
 #include "station.hpp"
-Box::Box(QWidget *parent):QWidget(parent){
+#include "basic.h"
+Box::Box(QString s,QWidget *parent):QWidget(parent){
     line=new QLineEdit(this);
     list=new QListWidget(this);
     line->setGeometry(0,0,200,50);
+    line->setPlaceholderText(s);
     connect(line,SIGNAL(textChanged(QString)),this,SLOT(FillList(QString)));
     connect(list,SIGNAL(itemClicked(QListWidgetItem*)),this,SLOT(FillLine(QListWidgetItem*)));
 }
@@ -26,13 +28,16 @@ void Box::FillList(QString s){
         }
     if(!count++)
         list->addItem("No Match Stations");
-    list->setGeometry(200,0,200,count*30);
+    list->setGeometry(200,0,200,count*25);
     list->show();
 }
 void Box::FillLine(QListWidgetItem* s){
     if(s->text()=="No Match Stations"){
-        line->setText("");
+        qDebug()<<"Call";
+        line->setText(QString());
         list->hide();
+        list->clear();
+        return;
     }
     line->setText(s->text());
     list->hide();

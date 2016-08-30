@@ -14,7 +14,7 @@ signals:
     void MainQuery_(UndefArgument);
     void Confirm_(UndefArgument);
 private:
-    MODE_R mode;
+    MODE mode;
     char* buffer;
     Message* message;
     QTcpSocket *socket;

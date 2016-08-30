@@ -1,10 +1,10 @@
-#include "mainquery.h"
+#include "login.h"
 #include <QApplication>
-#include "table.h"
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainQuery w;
+    LogIn w;
     w.show();
 
     return a.exec();

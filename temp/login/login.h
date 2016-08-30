@@ -1,6 +1,12 @@
 #ifndef LOGIN_H
 #define LOGIN_H
-#include "basic.h"
+#include <QSpacerItem>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QMainWindow>
 
 class LogIn : public QMainWindow
 {

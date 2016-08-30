@@ -49,6 +49,6 @@ void Communicate::Listen(){
         sscanf(buffer,"%d",&temp);
         delete [] buffer;
         buffer=nullptr;
-        mode=(MODE_R)temp;
+        mode=(MODE)temp;
     }
 }

@@ -3,8 +3,8 @@
 QuickQuery::QuickQuery(QWidget *parent)
     : PublicBaseClass(parent)
 {
-    box_from=new Box(this);
-    box_to=new Box(this);
+    box_from=new Box("Enter your Depart",this);
+    box_to=new Box("Enter your destination",this);
     to=new QLabel("TO",this);
     from=new QLabel("FROM",this);
     date=new QLabel("DATE",this);

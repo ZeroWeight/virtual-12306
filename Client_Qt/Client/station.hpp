@@ -1,5 +1,7 @@
 #ifndef STATION_HPP
 #define STATION_HPP
+#include <QList>
+#include <QString>
 enum Station{
     PEK=0,//beijing
     CGO,//zhengzhou
