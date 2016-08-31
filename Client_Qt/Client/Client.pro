@@ -25,7 +25,9 @@ SOURCES += main.cpp\
     mainquery.cpp \
     supertag.cpp \
     table.cpp \
-    login.cpp
+    login.cpp \
+    register.cpp \
+    buy.cpp
 
 HEADERS  += mainwindow.h \
     basic.h \

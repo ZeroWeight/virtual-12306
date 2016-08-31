@@ -5,10 +5,13 @@
 #include <QApplication>
 #include <QCalendarWidget>
 #include <QCheckBox>
+#include <QComboBox>
 #include <QDate>
 #include <QDateEdit>
 #include <QDebug>
+#include <QDialogButtonBox>
 #include <QEvent>
+#include <QFormLayout>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QLabel>

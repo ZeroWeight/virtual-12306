@@ -14,6 +14,7 @@
 #include <QMainWindow>
 #include <QScrollArea>
 #include <QPushButton>
+#include <QDebug>
 
 class Register : public QMainWindow
 {
@@ -51,10 +52,23 @@ private:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton_2;
     QSpacerItem *horizontalSpacer_3;
+private slots:
+    void DueToType(QString s);
+    void OK(){
+        qDebug()<<"A signal send";
+    }
 
+    void Cancle(){
+    qDebug()<<"A signal send";
+}
+signals:
+    void OK_Send();
+    void Cancle_Send();
 public:
     Register(QWidget *parent = 0);
     ~Register();
+public slots:
+    void show();
 };
 
 #endif // REGISTER_H

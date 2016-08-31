@@ -1,6 +1,20 @@
 #ifndef BUY_H
 #define BUY_H
-#include "publicbaseclass.h"
+#include <QtCore/QVariant>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
+#include <QMainWindow>
+
 class Buy : public QMainWindow
 {
     Q_OBJECT
@@ -55,6 +69,5 @@ public:
     Buy(QWidget *parent = 0);
     ~Buy();
 };
-
 
 #endif // BUY_H
