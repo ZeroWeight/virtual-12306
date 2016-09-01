@@ -1,6 +1,9 @@
 #ifndef CLIENT_H
 #define CLIENT_H
-#include "basic.h"
+#include <QLabel>
+#include <QMainWindow>
+#include <QTableWidget>
+#include <QLCDNumber>
 class Confirm : public QMainWindow
 {
     Q_OBJECT

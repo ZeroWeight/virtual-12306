@@ -15,6 +15,7 @@
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QLabel>
+#include <QLCDNumber>
 #include <QLineEdit>
 #include <QList>
 #include <QListWidget>
@@ -25,6 +26,7 @@
 #include <QObject>
 #include <QPushButton>
 #include <QScrollArea>
+#include <QScrollBar>
 #include <QSpacerItem>
 #include <QString>
 #include <QVBoxLayout>

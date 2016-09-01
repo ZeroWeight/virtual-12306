@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2016-08-31T22:49:31
+# Project created by QtCreator 2016-09-01T10:06:36
 #
 #-------------------------------------------------
 
@@ -8,12 +8,11 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = confirm_n
+TARGET = pay
 TEMPLATE = app
 
 
-SOURCES += main.cpp \
-    confirm.cpp
+SOURCES += main.cpp\
+        pay.cpp
 
-HEADERS  += \
-    confirm.h
+HEADERS  += pay.h
