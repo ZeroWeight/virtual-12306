@@ -2,7 +2,9 @@
 #define BASIC_H
 #include <cassert>
 #include <cstring>
+#include <QAction>
 #include <QApplication>
+#include <QButtonGroup>
 #include <QCalendarWidget>
 #include <QCheckBox>
 #include <QComboBox>
@@ -32,6 +34,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QWidgetItem>
+#include <QVariant>
 #define UndefArgument void
 #define UndefTypeValue
 #define MAXBUFFERSIZE 256

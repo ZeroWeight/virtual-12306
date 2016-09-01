@@ -13,6 +13,8 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QWidget>
+#include <QTableWidget>
+
 #include <QMainWindow>
 #include <QScrollArea>
 #include <QPushButton>
@@ -59,6 +61,13 @@ private:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton_2;
     QSpacerItem *horizontalSpacer_3;
+    QWidget* table_in;
+    QTableWidget* ticket_t;
+    QTableWidget* contract_t;
+    QPushButton* ticket_can;
+    QPushButton* contract_can;
+    QPushButton* contract_add;
+    QScrollArea *wid;
 private slots:
     void DueToType(QString s);
     void OK(){
