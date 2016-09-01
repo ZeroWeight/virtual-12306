@@ -1,6 +1,5 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-//class need to be finished
 #include "buy.h"
 #include "communicate.h"
 #include "confirm.h"
@@ -23,11 +22,12 @@ private:
     Pay* pay;
     QuickQuery* query;
     Register* _register;
-    Update* update;
+    //Update* update;
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
+public slots:
+    void show();
 };
 
 #endif // MAINWINDOW_H

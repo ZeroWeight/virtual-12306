@@ -2,27 +2,25 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent){
-    confirm=new Confirm(UndefTypeValue);
-    communication=new Communicate(UndefTypeValue);
-    login=new LogIn(UndefTypeValue);
-    main_query=new MainQuery(UndefTypeValue);
-    buy=new Buy(UndefTypeValue);
-    pay=new Pay(UndefTypeValue);
-    query=new QuickQuery(UndefTypeValue);
-    _register =new Register(UndefTypeValue);
-    update =new Update(UndefTypeValue);
-    //connect
+    confirm=new Confirm(this);
+    //communication=new Communicate(this);
+    login=new LogIn(this);
+    main_query=new MainQuery(this);
+    buy=new Buy(this);
+    pay=new Pay(this);
+    query=new QuickQuery(this);
+    _register =new Register(this);
+    //update =new Update(this);
+    connect(query,SIGNAL(login_click()),login,SLOT(show()));
+    connect(query,SIGNAL(reg_click()),_register,SLOT(show()));
+    connect(_register,SIGNAL(Cancle_Send()),_register,SLOT(hide()));
+    connect(main_query,SIGNAL(Log_in()),login,SLOT(show()));
+    connect(main_query,SIGNAL(Register()),_register,SLOT(show()));
 }
 
 MainWindow::~MainWindow()
 {
-    confirm->deleteLater();
-    communication->deleteLater();
-    login->deleteLater();
-    main_query->deleteLater();
-    buy->deleteLater();
-    pay->deleteLater();
-    query->deleteLater();
-    _register->deleteLater();
-    update->deleteLater();
+}
+void MainWindow::show(){
+    main_query->show();
 }

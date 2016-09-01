@@ -40,11 +40,12 @@ private:
 private slots:
     void DueToType(QString s);
     void OK(){
+        OK_Send();
         qDebug()<<"A signal send";
     }
 
     void Cancle(){
-    qDebug()<<"A signal send";
+        Cancle_Send();
 }
 signals:
     void OK_Send();

@@ -34,8 +34,6 @@ QuickQuery::QuickQuery(QWidget *parent)
     connect(name,SIGNAL(Click()),this,SIGNAL(name_click()));
 #ifdef ZW_DEBUG_
     connect(this,SIGNAL(ok_click()),this,SLOT(Debug()));
-    connect(this,SIGNAL(login_click()),this,SLOT(Debug()));
-    connect(this,SIGNAL(reg_click()),this,SLOT(Debug()));
     connect(this,SIGNAL(name_click()),this,SLOT(Debug()));
 #endif
 }
