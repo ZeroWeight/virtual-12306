@@ -3,8 +3,8 @@
 QuickQuery::QuickQuery(QWidget *parent)
     : PublicBaseClass(parent)
 {
-    box_from=new Box(this);
-    box_to=new Box(this);
+    box_from=new Box("Enter your Depart",this);
+    box_to=new Box("Enter your destination",this);
     to=new QLabel("TO",this);
     from=new QLabel("FROM",this);
     date=new QLabel("DATE",this);
@@ -34,8 +34,6 @@ QuickQuery::QuickQuery(QWidget *parent)
     connect(name,SIGNAL(Click()),this,SIGNAL(name_click()));
 #ifdef ZW_DEBUG_
     connect(this,SIGNAL(ok_click()),this,SLOT(Debug()));
-    connect(this,SIGNAL(login_click()),this,SLOT(Debug()));
-    connect(this,SIGNAL(reg_click()),this,SLOT(Debug()));
     connect(this,SIGNAL(name_click()),this,SLOT(Debug()));
 #endif
 }

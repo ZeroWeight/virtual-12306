@@ -1,6 +1,6 @@
 #ifndef SUPERTAG_H
 #define SUPERTAG_H
-#include"basic.h"
+#include "basic.h"
 class SuperTag:public QLabel{
     Q_OBJECT
 public:

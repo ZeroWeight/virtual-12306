@@ -18,7 +18,19 @@ SOURCES += main.cpp\
     box.cpp \
     date.cpp \
     quickquery.cpp \
-    supertag.cpp
+    supertag.cpp \
+    box.cpp \
+    date.cpp \
+    main.cpp \
+    mainquery.cpp \
+    supertag.cpp \
+    table.cpp \
+    login.cpp \
+    register.cpp \
+    buy.cpp \
+    confirm.cpp \
+    pay.cpp \
+    update.cpp
 
 HEADERS  += mainwindow.h \
     basic.h \
@@ -36,4 +48,10 @@ HEADERS  += mainwindow.h \
     box.h \
     date.h \
     station.hpp \
-    supertag.h
+    supertag.h \
+    box.h \
+    date.h \
+    mainquery.h \
+    station.hpp \
+    supertag.h \
+    table.h

@@ -1,6 +1,6 @@
 #ifndef BOX_H
 #define BOX_H
-#include"basic.h"
+#include "basic.h"
 class Box:public QWidget{
     Q_OBJECT
 private:
@@ -11,7 +11,7 @@ private slots:
     void FillLine(QListWidgetItem*);
 public:
     ~Box();
-    Box(QWidget *parent = 0);
+    Box(QString s,QWidget *parent = 0);
 public slots:
     void show();
 };
