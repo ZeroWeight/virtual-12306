@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     login.cpp \
     register.cpp \
     buy.cpp \
-    confirm.cpp
+    confirm.cpp \
+    pay.cpp
 
 HEADERS  += mainwindow.h \
     basic.h \
