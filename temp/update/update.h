@@ -1,5 +1,7 @@
-#ifndef REGISTER_H
-#define REGISTER_H
+#ifndef UPDATE_H
+#define UPDATE_H
+
+#include <QMainWindow>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
@@ -15,11 +17,16 @@
 #include <QScrollArea>
 #include <QPushButton>
 #include <QDebug>
-
-class Register : public QMainWindow
+class Update : public QMainWindow
 {
     Q_OBJECT
 private:
+    QTabWidget *tabWidget;
+    QWidget *basic;
+    QWidget *ticket;
+    QWidget *contract;
+
+    //
     QScrollArea *centralWidget;
     QWidget *widget;
     QVBoxLayout *verticalLayout;
@@ -67,10 +74,10 @@ signals:
     void OK_Send();
     void Cancle_Send();
 public:
-    Register(QWidget *parent = 0);
-    ~Register();
+    Update(QWidget *parent = 0);
+    ~Update();
 public slots:
     void show();
 };
 
-#endif // REGISTER_H
+#endif // UPDATE_H
