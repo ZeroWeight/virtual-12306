@@ -13,11 +13,11 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QTabWidget>
+#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,48 +26,44 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QTabWidget *tabWidget;
-    QWidget *tab;
-    QPushButton *pushButton;
-    QWidget *tab_3;
-    QDialogButtonBox *buttonBox;
-    QWidget *tab_2;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QRadioButton *radioButton_2;
+    QSpacerItem *horizontalSpacer;
+    QRadioButton *radioButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1000, 800);
+        MainWindow->resize(174, 20);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        tabWidget = new QTabWidget(centralWidget);
-        tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(-1, -1, 1001, 801));
-        QFont font;
-        font.setPointSize(16);
-        tabWidget->setFont(font);
-        tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
-        pushButton = new QPushButton(tab);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(70, 60, 271, 121));
-        tabWidget->addTab(tab, QString());
-        tab_3 = new QWidget();
-        tab_3->setObjectName(QStringLiteral("tab_3"));
-        buttonBox = new QDialogButtonBox(tab_3);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setGeometry(QRect(150, 150, 211, 51));
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-        tabWidget->addTab(tab_3, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        tabWidget->addTab(tab_2, QString());
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(0, 0, 176, 22));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        radioButton_2 = new QRadioButton(widget);
+        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
+
+        horizontalLayout->addWidget(radioButton_2);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+        radioButton = new QRadioButton(widget);
+        radioButton->setObjectName(QStringLiteral("radioButton"));
+
+        horizontalLayout->addWidget(radioButton);
+
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
-
-        tabWidget->setCurrentIndex(1);
-
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -75,10 +71,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "PushButton", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Basic info", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Tickets", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Contacts", 0));
+        radioButton_2->setText(QApplication::translate("MainWindow", "RadioButton", 0));
+        radioButton->setText(QApplication::translate("MainWindow", "RadioButton", 0));
     } // retranslateUi
 
 };

@@ -16,7 +16,7 @@ public:
     MODE m_mode;
     Message(){
         m_mode=N;
-        m_buffer=new char[128];
+        m_buffer=new char[65546];
     }
     ~Message(){
         delete[] m_buffer;

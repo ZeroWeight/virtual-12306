@@ -1,6 +1,4 @@
 #include "box.h"
-#include "station.hpp"
-#include "basic.h"
 Box::Box(QString s,QWidget *parent):QWidget(parent){
     line=new QLineEdit(this);
     list=new QListWidget(this);

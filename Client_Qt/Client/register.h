@@ -37,6 +37,12 @@ private:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton_2;
     QSpacerItem *horizontalSpacer_3;
+    QLabel* gender;
+    QRadioButton* m;
+    QRadioButton* f;
+    QWidget* G;
+    QHBoxLayout* H;
+    QSpacerItem* s;
 private slots:
     void DueToType(QString s);
     void OK(){

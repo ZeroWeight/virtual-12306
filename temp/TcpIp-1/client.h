@@ -10,24 +10,17 @@ private:
     Message* m_message;
 private slots:
     void Communicate(){
-        m_socket->read(m_message->m_buffer,128);
-        if(m_message->m_mode){
-            GetMessage(m_message);
-            m_message->m_mode=N;
-        }
-        else{
-            int temp;
-            sscanf(m_message->m_buffer,"%d",&temp);
-            m_message->m_mode=(MODE)temp;
-            m_socket->write(ACK,128);
-        }
+        m_socket->read(m_message->m_buffer,1024);
+        GetMessage(m_message);
+        m_message->m_mode=N;
+
     }
     void ThrowTrash(){
         Trash(this);
     }
     void Reply(char* buffer,int length){
         //m_socket->write(buffer,length);
-        m_socket->write(buffer,128);
+        m_socket->write(buffer,1024);
         qDebug()<<"666777"<<buffer<<length;
     }
 

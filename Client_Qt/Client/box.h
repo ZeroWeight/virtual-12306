@@ -1,6 +1,7 @@
 #ifndef BOX_H
 #define BOX_H
 #include "basic.h"
+#include "station.hpp"
 class Box:public QWidget{
     Q_OBJECT
 private:
@@ -12,6 +13,13 @@ private slots:
 public:
     ~Box();
     Box(QString s,QWidget *parent = 0);
+    QString text()const{
+        return line->text();
+    }
+    void clear(){
+        line->clear();
+    }
+
 public slots:
     void show();
 };

@@ -22,7 +22,7 @@ MainQuery::MainQuery(QWidget *parent)
     log_out=new SuperTag("Log Out",this);
     date=new Date(this);
     reg=new SuperTag("Register",this);
-    name=new SuperTag("",this);
+    name=new SuperTag("Name",this);
     table=new Table*[count];
     for(int i=0;i<count;i++){
         table[i]=new Table(i,table_w);
