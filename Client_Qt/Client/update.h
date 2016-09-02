@@ -1,7 +1,7 @@
 #ifndef UPDATE_H
 #define UPDATE_H
 #include"publicbaseclass.h"
-class Update : public QMainWindow
+class Update : public User
 {
     Q_OBJECT
 private:

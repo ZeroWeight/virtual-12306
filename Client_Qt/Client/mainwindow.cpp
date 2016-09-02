@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(query,SIGNAL(name_click()),update,SLOT(show()));
     connect(update,SIGNAL(Cancle_Send()),update,SLOT(hide()));
     connect(query,SIGNAL(ok_click(int,int,QDate)),communication,SLOT(get_from_query(int,int,QDate)));
+    connect(login,SIGNAL(OK(QString,QString)),communication,SLOT(log_in(QString,Qstring)));
 }
 
 MainWindow::~MainWindow()

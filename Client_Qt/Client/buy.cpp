@@ -1,7 +1,7 @@
 #include "buy.h"
 
 Buy::Buy(QWidget *parent)
-    : QMainWindow(parent)
+    : User(parent)
 {
     this->resize(1100, 800);
     widget = new QWidget(this);

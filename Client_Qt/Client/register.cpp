@@ -1,7 +1,7 @@
 #include "register.h"
 
 Register::Register(QWidget *parent)
-    : QMainWindow(parent)
+    : User(parent)
 {
     this->resize(1200, 700);
     this->setMinimumSize(this->size());
@@ -113,20 +113,28 @@ Register::Register(QWidget *parent)
     lineEdit_8->setMinimumSize(QSize(0, 50));
     lineEdit_8->setFont(font);
     formLayout->setWidget(9, QFormLayout::FieldRole, lineEdit_8);
+    grade=new QLabel("Grade",widget);
+    grade->setFont(font);
+    formLayout->setWidget(10,QFormLayout::LabelRole,grade);
+    grade_input=new QLineEdit(this);
+    grade_input->setFont(font);
+    grade_input->setPlaceholderText("Your grade here");
+    grade_input->setMinimumSize(QSize(0,50));
+    formLayout->setWidget(10,QFormLayout::FieldRole,grade_input);
     label_10 = new QLabel(widget);
-    formLayout->setWidget(10, QFormLayout::LabelRole, label_10);
+    formLayout->setWidget(11, QFormLayout::LabelRole, label_10);
     comboBox_2 = new QComboBox(widget);
     comboBox_2->setMinimumSize(QSize(0, 60));
     comboBox_2->setFont(font);
-    formLayout->setWidget(10, QFormLayout::FieldRole, comboBox_2);
+    formLayout->setWidget(11, QFormLayout::FieldRole, comboBox_2);
     label_11 = new QLabel(widget);
     label_11->setObjectName(QStringLiteral("label_11"));
-    formLayout->setWidget(11, QFormLayout::LabelRole, label_11);
+    formLayout->setWidget(12, QFormLayout::LabelRole, label_11);
     comboBox_3 = new QComboBox(widget);
     comboBox_3->setObjectName(QStringLiteral("comboBox_3"));
     comboBox_3->setMinimumSize(QSize(0, 60));
     comboBox_3->setFont(font);
-    formLayout->setWidget(11, QFormLayout::FieldRole, comboBox_3);
+    formLayout->setWidget(12, QFormLayout::FieldRole, comboBox_3);
     lineEdit_4 = new QLineEdit(widget);
     sizePolicy.setHeightForWidth(lineEdit_4->sizePolicy().hasHeightForWidth());
     lineEdit_4->setSizePolicy(sizePolicy);
@@ -264,6 +272,8 @@ void Register::DueToType(QString s){
         lineEdit_8->hide();
         label_9->hide();
         label_8->hide();
+        grade->hide();
+        grade_input->hide();
         verticalLayout->setContentsMargins(0, 0, 0, 300);
     }
     else{
@@ -272,6 +282,8 @@ void Register::DueToType(QString s){
         label_11->show();
         label_10->show();
         lineEdit_7->show();
+        grade->show();
+        grade_input->show();
         lineEdit_8->show();
         label_9->show();
         label_8->show();
@@ -286,6 +298,8 @@ void Register::show(){
     label_11->hide();
     label_10->hide();
     lineEdit_7->hide();
+    grade->hide();
+    grade_input->hide();
     lineEdit_8->hide();
     label_9->hide();
     label_8->hide();

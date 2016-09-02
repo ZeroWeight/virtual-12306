@@ -1,7 +1,7 @@
 #include "update.h"
 
 Update::Update(QWidget *parent)
-    : QMainWindow(parent)
+    : User(parent)
 {
     this->resize(1200,750);
     this->setMaximumSize(this->size());
@@ -256,7 +256,6 @@ Update::Update(QWidget *parent)
     //
     //
     {
-        int tickets=10;
         wid=new QScrollArea(ticket);
         wid->setGeometry(15,50,1172,500);
         table_in=new QWidget(wid);

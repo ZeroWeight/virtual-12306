@@ -1,7 +1,7 @@
 #include "login.h"
 
 LogIn::LogIn(QWidget *parent)
-    : QMainWindow(parent)
+    : User(parent)
 {
     this->resize(400, 361);
     widget = new QWidget(this);
@@ -82,14 +82,18 @@ LogIn::LogIn(QWidget *parent)
     verticalLayout->addLayout(horizontalLayout_3);
     verticalSpacer_4 = new QSpacerItem(20, 60, QSizePolicy::Minimum, QSizePolicy::Fixed);
     verticalLayout->addItem(verticalSpacer_4);
-    connect(pushButton,SIGNAL(clicked(bool)),this,SIGNAL(OK()));
+    connect(pushButton,SIGNAL(clicked(bool)),this,SLOT(OK_CHECK()));
     connect(pushButton_2,SIGNAL(clicked(bool)),this,SLOT(hide()));
     connect(pushButton_2,SIGNAL(clicked(bool)),lineEdit,SLOT(clear()));
-    connect(pushButton_2,SIGNAL(clicked(bool)),lineEdit,SLOT(clear()));
+    connect(pushButton_2,SIGNAL(clicked(bool)),lineEdit_2,SLOT(clear()));
 
 }
 
 LogIn::~LogIn()
 {
 
+}
+void LogIn::OK_CHECK(){
+    //check the info
+    OK(lineEdit->text(),lineEdit_2->text());
 }

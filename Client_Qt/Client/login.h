@@ -1,8 +1,8 @@
 #ifndef LOGIN_H
 #define LOGIN_H
-#include "basic.h"
+#include "publicbaseclass.h"
 
-class LogIn : public QMainWindow
+class LogIn : public User
 {
     Q_OBJECT
 private:
@@ -31,7 +31,9 @@ private:
     QSpacerItem *horizontalSpacer_8;
     QSpacerItem *verticalSpacer_4;
 signals:
-    void OK();
+    void OK(QString name,QString password);
+private slots:
+    void OK_CHECK();
 public:
     LogIn(QWidget *parent = 0);
     ~LogIn();

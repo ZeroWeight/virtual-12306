@@ -1,7 +1,7 @@
 #ifndef BUY_H
 #define BUY_H
 #include "publicbaseclass.h"
-class Buy : public QMainWindow
+class Buy : public User
 {
     Q_OBJECT
 private:

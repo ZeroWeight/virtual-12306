@@ -2,7 +2,7 @@
 #include <QHeaderView>
 #include <QScrollBar>
 MainQuery::MainQuery(QWidget *parent)
-    : QMainWindow(parent)
+    : User(parent)
 {
     count=5;//temp
     train_l=new QLabel("Train Level",this);
@@ -27,23 +27,15 @@ MainQuery::MainQuery(QWidget *parent)
     for(int i=0;i<count;i++){
         table[i]=new Table(i,table_w);
         connect(table[i],SIGNAL(Reload(int,bool)),this,SLOT(Reload(int,bool)));
-        connect(table[i],SIGNAL(Buy(QString)),this,SIGNAL(Buy()));
-        connect(table[i],SIGNAL(Route(QString)),this,SIGNAL(Route()));
+        connect(table[i],SIGNAL(Buy(QString)),this,SIGNAL(Buy(QString)));
+        connect(table[i],SIGNAL(Route(QString)),this,SIGNAL(Route(QString)));
     }
     src=new Box("Enter your Depart",this);
     des=new Box("Enter your destination",this);
     connect(name,SIGNAL(Click()),this,SIGNAL(Name()));
     connect(log_in,SIGNAL(Click()),this,SIGNAL(Log_in()));
-    connect(log_out,SIGNAL(Click()),this,SIGNAL(Log_out()));
+    connect(log_out,SIGNAL(Click()),this,SLOT(Log_out()));
     connect(reg,SIGNAL(Click()),this,SIGNAL(Register()));
-#ifdef ZW_DEBUG
-    connect(this,SIGNAL(Buy()),this,SLOT(Debug()));
-    connect(this,SIGNAL(Route()),this,SLOT(Debug()));
-    connect(this,SIGNAL(Log_in()),this,SLOT(Debug()));
-    connect(this,SIGNAL(Log_out()),this,SLOT(Debug()));
-    connect(this,SIGNAL(Name()),this,SLOT(Debug()));
-    connect(this,SIGNAL(Register()),this,SLOT(Debug()));
-#endif
     //
     table_a->setWidget(table_w);
     table_w->setGeometry(QRect(50,200,1202,count*100+110));
@@ -105,7 +97,7 @@ void MainQuery::show(){
     header->show();
     for(int i=0;i<count;i++)
         table[i]->show();
-    if(1){
+    if(!is_log_in){
         log_in->show();
         reg->show();
         log_out->hide();

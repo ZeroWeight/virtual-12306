@@ -38,12 +38,28 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QWidgetItem>
+#include <string>
 #define BUFFER 1024
 #define ZW_DEBUG_
 #define ACK "0123456789\0"
 enum MODE{
     NONE=0,
     Q_S,
+    L_I,
+    REG,
+};
+enum TYPE{
+    ADULT,
+    CHILD,
+    STUDENT,
+};
+enum GENDER{
+    MALE,
+    FEMALE
+};
+enum AUTH{
+    USER,
+    SU
 };
 
 class Message{

@@ -84,7 +84,7 @@ void Confirm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
 }
 
 const QMetaObject Confirm::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_Confirm.data,
+    { &User::staticMetaObject, qt_meta_stringdata_Confirm.data,
       qt_meta_data_Confirm,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
@@ -99,12 +99,12 @@ void *Confirm::qt_metacast(const char *_clname)
     if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_Confirm.stringdata0))
         return static_cast<void*>(const_cast< Confirm*>(this));
-    return QMainWindow::qt_metacast(_clname);
+    return User::qt_metacast(_clname);
 }
 
 int Confirm::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = User::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Register_t {
-    QByteArrayData data[9];
-    char stringdata0[57];
+    QByteArrayData data[23];
+    char stringdata0[138];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,16 +32,32 @@ static const qt_meta_stringdata_Register_t qt_meta_stringdata_Register = {
 QT_MOC_LITERAL(0, 0, 8), // "Register"
 QT_MOC_LITERAL(1, 9, 7), // "OK_Send"
 QT_MOC_LITERAL(2, 17, 0), // ""
-QT_MOC_LITERAL(3, 18, 11), // "Cancle_Send"
-QT_MOC_LITERAL(4, 30, 9), // "DueToType"
-QT_MOC_LITERAL(5, 40, 1), // "s"
-QT_MOC_LITERAL(6, 42, 2), // "OK"
-QT_MOC_LITERAL(7, 45, 6), // "Cancle"
-QT_MOC_LITERAL(8, 52, 4) // "show"
+QT_MOC_LITERAL(3, 18, 3), // "usr"
+QT_MOC_LITERAL(4, 22, 8), // "password"
+QT_MOC_LITERAL(5, 31, 4), // "name"
+QT_MOC_LITERAL(6, 36, 2), // "id"
+QT_MOC_LITERAL(7, 39, 6), // "GENDER"
+QT_MOC_LITERAL(8, 46, 1), // "g"
+QT_MOC_LITERAL(9, 48, 4), // "TYPE"
+QT_MOC_LITERAL(10, 53, 4), // "type"
+QT_MOC_LITERAL(11, 58, 4), // "univ"
+QT_MOC_LITERAL(12, 63, 5), // "grade"
+QT_MOC_LITERAL(13, 69, 9), // "studentid"
+QT_MOC_LITERAL(14, 79, 7), // "Station"
+QT_MOC_LITERAL(15, 87, 5), // "intv1"
+QT_MOC_LITERAL(16, 93, 5), // "intv2"
+QT_MOC_LITERAL(17, 99, 11), // "Cancle_Send"
+QT_MOC_LITERAL(18, 111, 9), // "DueToType"
+QT_MOC_LITERAL(19, 121, 1), // "s"
+QT_MOC_LITERAL(20, 123, 2), // "OK"
+QT_MOC_LITERAL(21, 126, 6), // "Cancle"
+QT_MOC_LITERAL(22, 133, 4) // "show"
 
     },
-    "Register\0OK_Send\0\0Cancle_Send\0DueToType\0"
-    "s\0OK\0Cancle\0show"
+    "Register\0OK_Send\0\0usr\0password\0name\0"
+    "id\0GENDER\0g\0TYPE\0type\0univ\0grade\0"
+    "studentid\0Station\0intv1\0intv2\0Cancle_Send\0"
+    "DueToType\0s\0OK\0Cancle\0show"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,21 +75,21 @@ static const uint qt_meta_data_Register[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   44,    2, 0x06 /* Public */,
-       3,    0,   45,    2, 0x06 /* Public */,
+       1,   11,   44,    2, 0x06 /* Public */,
+      17,    0,   67,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    1,   46,    2, 0x08 /* Private */,
-       6,    0,   49,    2, 0x08 /* Private */,
-       7,    0,   50,    2, 0x08 /* Private */,
-       8,    0,   51,    2, 0x0a /* Public */,
+      18,    1,   68,    2, 0x08 /* Private */,
+      20,    0,   71,    2, 0x08 /* Private */,
+      21,    0,   72,    2, 0x08 /* Private */,
+      22,    0,   73,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, 0x80000000 | 7, 0x80000000 | 9, QMetaType::QString, QMetaType::Int, QMetaType::QString, 0x80000000 | 14, 0x80000000 | 14,    3,    4,    5,    6,    8,   10,   11,   12,   13,   15,   16,
     QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QString,    5,
+    QMetaType::Void, QMetaType::QString,   19,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -87,7 +103,7 @@ void Register::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         Register *_t = static_cast<Register *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->OK_Send(); break;
+        case 0: _t->OK_Send((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< GENDER(*)>(_a[5])),(*reinterpret_cast< TYPE(*)>(_a[6])),(*reinterpret_cast< QString(*)>(_a[7])),(*reinterpret_cast< int(*)>(_a[8])),(*reinterpret_cast< QString(*)>(_a[9])),(*reinterpret_cast< Station(*)>(_a[10])),(*reinterpret_cast< Station(*)>(_a[11]))); break;
         case 1: _t->Cancle_Send(); break;
         case 2: _t->DueToType((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 3: _t->OK(); break;
@@ -99,7 +115,7 @@ void Register::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (Register::*_t)();
+            typedef void (Register::*_t)(QString , QString , QString , QString , GENDER , TYPE , QString , int , QString , Station , Station );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Register::OK_Send)) {
                 *result = 0;
                 return;
@@ -116,7 +132,7 @@ void Register::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
 }
 
 const QMetaObject Register::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_Register.data,
+    { &User::staticMetaObject, qt_meta_stringdata_Register.data,
       qt_meta_data_Register,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
@@ -131,12 +147,12 @@ void *Register::qt_metacast(const char *_clname)
     if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_Register.stringdata0))
         return static_cast<void*>(const_cast< Register*>(this));
-    return QMainWindow::qt_metacast(_clname);
+    return User::qt_metacast(_clname);
 }
 
 int Register::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = User::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
@@ -152,9 +168,10 @@ int Register::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void Register::OK_Send()
+void Register::OK_Send(QString _t1, QString _t2, QString _t3, QString _t4, GENDER _t5, TYPE _t6, QString _t7, int _t8, QString _t9, Station _t10, Station _t11)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)), const_cast<void*>(reinterpret_cast<const void*>(&_t5)), const_cast<void*>(reinterpret_cast<const void*>(&_t6)), const_cast<void*>(reinterpret_cast<const void*>(&_t7)), const_cast<void*>(reinterpret_cast<const void*>(&_t8)), const_cast<void*>(reinterpret_cast<const void*>(&_t9)), const_cast<void*>(reinterpret_cast<const void*>(&_t10)), const_cast<void*>(reinterpret_cast<const void*>(&_t11)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1

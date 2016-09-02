@@ -1,7 +1,7 @@
 #include "pay.h"
 
 Pay::Pay(QWidget *parent)
-    : QMainWindow(parent)
+    : User(parent)
 {
     this->resize(500, 600);
     widget = new QWidget(this);
