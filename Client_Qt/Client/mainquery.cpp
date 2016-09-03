@@ -27,7 +27,7 @@ MainQuery::MainQuery(QWidget *parent)
     for(int i=0;i<count;i++){
         table[i]=new Table(i,table_w);
         connect(table[i],SIGNAL(Reload(int,bool)),this,SLOT(Reload(int,bool)));
-        connect(table[i],SIGNAL(Buy(QString)),this,SIGNAL(Buy(QString)));
+        connect(table[i],SIGNAL(Buy(QString)),this,SLOT(ReadyBuy(QString)));
         connect(table[i],SIGNAL(Route(QString)),this,SIGNAL(Route(QString)));
     }
     src=new Box("Enter your Depart",this);
@@ -77,6 +77,9 @@ MainQuery::MainQuery(QWidget *parent)
         table[i]->setGeometry(0,(i+1)*header->rowHeight(0),
                              header->columnCount()*header->columnWidth(0)+2,
                               2*header->rowCount()*header->rowHeight(0)+2);
+    ok=new QPushButton("Query!",this);
+    ok->setGeometry(1300,600,200,100);
+    connect(ok,SIGNAL(clicked(bool)),this,SLOT(Query()));
     //
 
 
@@ -137,4 +140,68 @@ void MainQuery::Reload(int rank, bool m){
                                  table_w->height()-100);
 
     }
+}
+void MainQuery::Query(){
+    int to,from;
+    for(from=0;from<ALL;from++)
+        if(NAME[from].toUpper()==QString(src->text()).toUpper())
+            break;
+    if(from==ALL){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("Departure invaild");
+        a->show();
+        src->clear();
+        return ;
+    }
+    for(to=0;to<ALL;to++)
+        if(NAME[to].toUpper()==QString(des->text()).toUpper())
+            break;
+    if(to==ALL){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("Destination invaild");
+        a->show();
+        des->clear();
+        return ;
+    }
+    if(to==from){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("The Destination and the Departuature are the same station");
+        a->show();
+        des->clear();
+        src->clear();
+        return ;
+    }
+    ok_click(to,from,date->date());
+}
+void MainQuery::ReadyBuy(QString s){
+    int to,from;
+    for(from=0;from<ALL;from++)
+        if(NAME[from].toUpper()==QString(src->text()).toUpper())
+            break;
+    if(from==ALL){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("Departure invaild");
+        a->show();
+        src->clear();
+        return ;
+    }
+    for(to=0;to<ALL;to++)
+        if(NAME[to].toUpper()==QString(des->text()).toUpper())
+            break;
+    if(to==ALL){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("Destination invaild");
+        a->show();
+        des->clear();
+        return ;
+    }
+    if(to==from){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("The Destination and the Departuature are the same station");
+        a->show();
+        des->clear();
+        src->clear();
+        return ;
+    }
+    Buy(s,to,from,date->date());
 }

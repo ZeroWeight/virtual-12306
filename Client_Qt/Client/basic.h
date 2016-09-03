@@ -47,6 +47,9 @@ enum MODE{
     Q_S,
     L_I,
     REG,
+    M_S,
+    M_B,
+    M_R,
 };
 enum TYPE{
     ADULT,
@@ -60,6 +63,10 @@ enum GENDER{
 enum AUTH{
     USER,
     SU
+};
+enum SEAT_TYPE{
+    SIT,
+    SLEEP
 };
 
 class Message{

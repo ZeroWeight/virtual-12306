@@ -139,6 +139,8 @@ Buy::Buy(QWidget *parent)
     tableWidget = new QTableWidget(widget);
     if (tableWidget->columnCount() < 3)
         tableWidget->setColumnCount(3);
+    tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    tableWidget->setSelectionMode(QAbstractItemView::NoSelection);
     QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
     tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
     QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -215,6 +217,20 @@ Buy::Buy(QWidget *parent)
     QTableWidgetItem *___qtablewidgetitem5 = tableWidget->verticalHeaderItem(2);
     ___qtablewidgetitem5->setText(QApplication::translate("Buy", "Person 3", 0));
     tableWidget->horizontalHeader()->setFont(font);
+    for(int i=0;i<4;i++){
+        box[i]=new QCheckBox(this);
+        box[i]->setGeometry(250+200*i,175,100,100);
+    }
+    check=new QComboBox(this);
+    check->setGeometry(850,100,150,75);
+    check->insertItem(0,"Seat");
+    check->insertItem(1,"Sleeper");
+    check->setFont(font);
+    connect(buttonBox,SIGNAL(rejected()),this,SIGNAL(c()));
+    connect(buttonBox,SIGNAL(rejected()),this,SLOT(hide()));
+}
+void Buy::to_confirm(){
+    //...
 }
 
 Buy::~Buy()

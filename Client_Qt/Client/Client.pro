@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     confirm.cpp \
     pay.cpp \
     update.cpp \
-    communicate.cpp
+    communicate.cpp \
+    publicbaseclass.cpp
 
 HEADERS  += mainwindow.h \
     basic.h \

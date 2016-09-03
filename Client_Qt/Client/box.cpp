@@ -13,6 +13,7 @@ void Box::show(){
     line->show();
 }
 void Box::FillList(QString s){
+    this->raise();
     list->clear();
     if(s.length()==0) {
         list->hide();
@@ -37,6 +38,7 @@ void Box::FillLine(QListWidgetItem* s){
         list->clear();
         return;
     }
+    this->raise();
     line->setText(s->text());
     list->hide();
 }

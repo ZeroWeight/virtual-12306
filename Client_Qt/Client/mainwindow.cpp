@@ -20,12 +20,19 @@ MainWindow::MainWindow(QWidget *parent)
     connect(query,SIGNAL(name_click()),update,SLOT(show()));
     connect(update,SIGNAL(Cancle_Send()),update,SLOT(hide()));
     connect(query,SIGNAL(ok_click(int,int,QDate)),communication,SLOT(get_from_query(int,int,QDate)));
-    connect(login,SIGNAL(OK(QString,QString)),communication,SLOT(log_in(QString,Qstring)));
+    connect(login,SIGNAL(OK(QString,QString)),communication,SLOT(log_in(QString,QString)));
+    connect(_register,SIGNAL(OK_Send(QString,QString,QString,QString,GENDER,TYPE,QString,int,QString,Station,Station)),
+            communication,SLOT(reg(QString,QString,QString,QString,GENDER,TYPE,QString,int,QString,Station,Station)));
+    connect(main_query,SIGNAL(ok_click(int,int,QDate)),communication,SLOT(get_from_main(int,int,QDate)));
+    connect(main_query,SIGNAL(Buy(QString,int,int,QDate)),communication,SLOT(buy_from_main(QString,int,int,QDate)));
+    connect(main_query,SIGNAL(Route(QString)),communication,SLOT(route_from_main(QString)));
+    connect(buy,SIGNAL(c()),main_query,SLOT(show()));
+    connect(main_query,SIGNAL(Buy(QString,int,int,QDate)),main_query,SLOT(hide()));
 }
 
 MainWindow::~MainWindow()
 {
 }
 void MainWindow::show(){
-    query->show();
+    update->show();
 }

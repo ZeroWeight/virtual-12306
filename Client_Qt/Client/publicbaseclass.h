@@ -28,12 +28,13 @@ public:
 };
 class User:public QMainWindow{
 public:
-    bool is_log_in;
-    int tickets;
+    static bool is_log_in;
+    static int tickets;
     static QString user_name;
     static QString password;
     static AUTH type;
+    static int num_contact;
     static People contact[4];
-    User(QWidget *parent = 0):QMainWindow(parent),is_log_in(0),tickets(0){}
+    User(QWidget *parent = 0):QMainWindow(parent){}
 };
 #endif // PUBLICBASECLASS_H

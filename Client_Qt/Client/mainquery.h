@@ -32,12 +32,14 @@ private:
     SuperTag* log_out;
     SuperTag* reg;
     SuperTag* name;
+    QPushButton* ok;
 private slots:
     void Reload(int rank,bool m);
     void Log_out(){
         is_log_in=false;
     }
-
+    void Query();
+    void ReadyBuy(QString s);
 public:
     MainQuery(QWidget *parent = 0);
     ~MainQuery();
@@ -47,14 +49,9 @@ signals:
     void Log_in();
     void Name();
     void Register();
-    void Buy(QString);
+    void ok_click(int des,int src,QDate date);
+    void Buy(QString,int des,int src,QDate date);
     void Route(QString);
-#ifdef ZW_DEBUG
-private slots:
-    void Debug(){
-        qDebug()<<"A signal emit";
-    }
-#endif
 };
 
 
