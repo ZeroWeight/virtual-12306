@@ -3,363 +3,278 @@
 Update::Update(QWidget *parent)
     : User(parent)
 {
-    this->resize(1200,750);
-    this->setMaximumSize(this->size());
-    this->setMinimumSize(this->size());
+    this->resize(1000, 700);
     tabWidget = new QTabWidget(this);
-    tabWidget->setGeometry(QRect(-1, -1, 1201, 751));
+    tabWidget->setObjectName(QStringLiteral("tabWidget"));
+    tabWidget->setGeometry(QRect(0, 0, 1001, 1200));
     QFont font;
     font.setPointSize(16);
     tabWidget->setFont(font);
-    basic=new QWidget();
-    tabWidget->addTab(basic,"Basic Info");
-    ticket=new QWidget();
-    tabWidget->addTab(ticket,"Tickets Info");
-    contract=new QWidget();
-    tabWidget->addTab(contract,"Contract Info");//
-    //
-    //
-    {
-        centralWidget = new QScrollArea(basic);
-        centralWidget->setGeometry(0,0,1200,700);
-        widget = new QWidget(centralWidget);
-        widget->setGeometry(QRect(0, -4, 1101, 1501));
-        verticalLayout = new QVBoxLayout(widget);
-        verticalLayout->setSpacing(120);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setContentsMargins(0, 0, 0, 20);
-        formLayout = new QFormLayout();
-        formLayout->setSpacing(6);
-        formLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
-        formLayout->setLabelAlignment(Qt::AlignJustify|Qt::AlignVCenter);
-        formLayout->setHorizontalSpacing(24);
-        formLayout->setVerticalSpacing(60);
-        formLayout->setContentsMargins(20, 20, 20, -1);
-        label = new QLabel(widget);
-        formLayout->setWidget(0, QFormLayout::LabelRole, label);
-        lineEdit = new QLineEdit(widget);
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
-        lineEdit->setSizePolicy(sizePolicy);
-        lineEdit->setMinimumSize(QSize(0, 60));
-        QFont font;
-        font.setPointSize(20);
-        lineEdit->setFont(font);
-        formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit);
-        label_2 = new QLabel(widget);
-        formLayout->setWidget(1, QFormLayout::LabelRole, label_2);
-        lineEdit_2 = new QLineEdit(widget);
-        sizePolicy.setHeightForWidth(lineEdit_2->sizePolicy().hasHeightForWidth());
-        lineEdit_2->setSizePolicy(sizePolicy);
-        lineEdit_2->setMinimumSize(QSize(0, 60));
-        lineEdit_2->setFont(font);
-        formLayout->setWidget(1, QFormLayout::FieldRole, lineEdit_2);
-        label_3 = new QLabel(widget);
-        formLayout->setWidget(2, QFormLayout::LabelRole, label_3);
-        lineEdit_3 = new QLineEdit(widget);
-        sizePolicy.setHeightForWidth(lineEdit_3->sizePolicy().hasHeightForWidth());
-        lineEdit_3->setSizePolicy(sizePolicy);
-        lineEdit_3->setMinimumSize(QSize(0, 60));
-        lineEdit_3->setFont(font);
-        formLayout->setWidget(2, QFormLayout::FieldRole, lineEdit_3);
-        label_6 = new QLabel(widget);
-        formLayout->setWidget(3, QFormLayout::LabelRole, label_6);
-        lineEdit_6 = new QLineEdit(widget);
-        sizePolicy.setHeightForWidth(lineEdit_6->sizePolicy().hasHeightForWidth());
-        lineEdit_6->setSizePolicy(sizePolicy);
-        lineEdit_6->setMinimumSize(QSize(0, 60));
-        lineEdit_6->setFont(font);
-        formLayout->setWidget(3, QFormLayout::FieldRole, lineEdit_6);
-        label_4 = new QLabel(widget);
-        formLayout->setWidget(4, QFormLayout::LabelRole, label_4);
-        label_5 = new QLabel(widget);
-        formLayout->setWidget(5, QFormLayout::LabelRole, label_5);
-        lineEdit_5 = new QLineEdit(widget);
-        sizePolicy.setHeightForWidth(lineEdit_5->sizePolicy().hasHeightForWidth());
-        lineEdit_5->setSizePolicy(sizePolicy);
-        lineEdit_5->setMinimumSize(QSize(0, 60));
-        lineEdit_5->setFont(font);
-        formLayout->setWidget(5, QFormLayout::FieldRole, lineEdit_5);
-        label_7 = new QLabel(widget);
-        formLayout->setWidget(6, QFormLayout::LabelRole, label_7);
-        comboBox = new QComboBox(widget);
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(comboBox->sizePolicy().hasHeightForWidth());
-        comboBox->setSizePolicy(sizePolicy1);
-        comboBox->setMinimumSize(QSize(0, 60));
-        comboBox->setFont(font);
-        formLayout->setWidget(6, QFormLayout::FieldRole, comboBox);
-        label_8 = new QLabel(widget);
-        formLayout->setWidget(7, QFormLayout::LabelRole, label_8);
-        lineEdit_7 = new QLineEdit(widget);
-        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
-        sizePolicy.setHeightForWidth(lineEdit_7->sizePolicy().hasHeightForWidth());
-        lineEdit_7->setSizePolicy(sizePolicy);
-        lineEdit_7->setMinimumSize(QSize(0, 50));
-        lineEdit_7->setFont(font);
-        formLayout->setWidget(7, QFormLayout::FieldRole, lineEdit_7);
-        label_9 = new QLabel(widget);
-        formLayout->setWidget(8, QFormLayout::LabelRole, label_9);
-        lineEdit_8 = new QLineEdit(widget);
-        sizePolicy.setHeightForWidth(lineEdit_8->sizePolicy().hasHeightForWidth());
-        lineEdit_8->setSizePolicy(sizePolicy);
-        lineEdit_8->setMinimumSize(QSize(0, 50));
-        lineEdit_8->setFont(font);
-        formLayout->setWidget(8, QFormLayout::FieldRole, lineEdit_8);
-        label_10 = new QLabel(widget);
-        formLayout->setWidget(9, QFormLayout::LabelRole, label_10);
-        comboBox_2 = new QComboBox(widget);
-        comboBox_2->setMinimumSize(QSize(0, 60));
-        comboBox_2->setFont(font);
-        formLayout->setWidget(9, QFormLayout::FieldRole, comboBox_2);
-        label_11 = new QLabel(widget);
-        label_11->setObjectName(QStringLiteral("label_11"));
-        formLayout->setWidget(10, QFormLayout::LabelRole, label_11);
-        comboBox_3 = new QComboBox(widget);
-        comboBox_3->setObjectName(QStringLiteral("comboBox_3"));
-        comboBox_3->setMinimumSize(QSize(0, 60));
-        comboBox_3->setFont(font);
-        formLayout->setWidget(10, QFormLayout::FieldRole, comboBox_3);
-        lineEdit_4 = new QLineEdit(widget);
-        sizePolicy.setHeightForWidth(lineEdit_4->sizePolicy().hasHeightForWidth());
-        lineEdit_4->setSizePolicy(sizePolicy);
-        lineEdit_4->setMinimumSize(QSize(0, 60));
-        lineEdit_4->setFont(font);
-        formLayout->setWidget(4, QFormLayout::FieldRole, lineEdit_4);
-        verticalLayout->addLayout(formLayout);
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
-        horizontalSpacer = new QSpacerItem(40, 60, QSizePolicy::Expanding, QSizePolicy::Minimum);
-        horizontalLayout->addItem(horizontalSpacer);
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy);
-        horizontalLayout->addWidget(pushButton);
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-        horizontalLayout->addItem(horizontalSpacer_2);
-        pushButton_2 = new QPushButton(widget);
-        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
-        pushButton_2->setSizePolicy(sizePolicy);
-        horizontalLayout->addWidget(pushButton_2);
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-        horizontalLayout->addItem(horizontalSpacer_3);
-        verticalLayout->addLayout(horizontalLayout);
-        centralWidget->setWidget(widget);
-        label->setFont(font);
-        label_2->setFont(font);
-        label_3->setFont(font);
-        label_4->setFont(font);
-        label_5->setFont(font);
-        label_6->setFont(font);
-        label_7->setFont(font);
-        label_8->setFont(font);
-        label_9->setFont(font);
-        label_10->setFont(font);
-        label_11->setFont(font);
-        pushButton->setFont(font);
-        pushButton_2->setFont(font);
-        lineEdit_2->setEchoMode(QLineEdit::Password);
-        lineEdit_3->setEchoMode(QLineEdit::Password);
-        //
-        //
-        //
-        //
-        this->setWindowTitle(QApplication::translate("Register", "Register", 0));
-        label->setText(QApplication::translate("Register", "UserName", 0));
-        lineEdit->setPlaceholderText(QApplication::translate("Register", "User Name Here", 0));
-        label_2->setText(QApplication::translate("Register", "PassWord", 0));
-        lineEdit_2->setText(QString());
-        lineEdit_2->setPlaceholderText(QApplication::translate("Register", "Password may contain a~z, A~Z, 0~9", 0));
-        label_3->setText(QApplication::translate("Register", "Password Confirm", 0));
-        lineEdit_3->setPlaceholderText(QApplication::translate("Register", "PassWord Again", 0));
-        label_6->setText(QApplication::translate("Register", "Name", 0));
-        lineEdit_6->setPlaceholderText(QApplication::translate("Register", "Your Real Name", 0));
-        label_4->setText(QApplication::translate("Register", "User Id", 0));
-        label_5->setText(QApplication::translate("Register", "Tel", 0));
-        lineEdit_5->setPlaceholderText(QApplication::translate("Register", "Your Telephone ", 0));
-        label_7->setText(QApplication::translate("Register", "Type", 0));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
-                              << QApplication::translate("Register", "Adult", 0)
-                              << QApplication::translate("Register", "Child", 0)
-                              << QApplication::translate("Register", "Student", 0)
-                              );
-        comboBox->setCurrentText(QApplication::translate("Register", "Adult", 0));
-        label_8->setText(QApplication::translate("Register", "Student ID", 0));
-        lineEdit_7->setPlaceholderText(QApplication::translate("Register", "Student ID", 0));
-        label_9->setText(QApplication::translate("Register", "University", 0));
-        lineEdit_8->setPlaceholderText(QApplication::translate("Register", "University", 0));
-        label_10->setText(QApplication::translate("Register", "Interval1", 0));
-        comboBox_2->clear();
-        comboBox_2->insertItems(0, QStringList()
-                                << QApplication::translate("Register", "BeiJing", 0)
-                                << QApplication::translate("Register", "ZhengZhou", 0)
-                                << QApplication::translate("Register", "ChangChun", 0)
-                                << QApplication::translate("Register", "ChongQing", 0)
-                                << QApplication::translate("Register", "ChangSha", 0)
-                                << QApplication::translate("Register", "ChengDu", 0)
-                                << QApplication::translate("Register", "FuZhou", 0)
-                                << QApplication::translate("Register", "GuangZhou", 0)
-                                << QApplication::translate("Register", "HeFei", 0)
-                                << QApplication::translate("Register", "HangZhou", 0)
-                                << QApplication::translate("Register", "HaErBin", 0)
-                                << QApplication::translate("Register", "KunMing", 0)
-                                << QApplication::translate("Register", "NanChang", 0)
-                                << QApplication::translate("Register", "NanJing", 0)
-                                << QApplication::translate("Register", "ShangHai", 0)
-                                << QApplication::translate("Register", "ShenYang", 0)
-                                << QApplication::translate("Register", "ShiJiaZhuang", 0)
-                                << QApplication::translate("Register", "WuHan", 0)
-                                );
-        comboBox_2->setCurrentText(QApplication::translate("Register", "BeiJing", 0));
-        label_11->setText(QApplication::translate("Register", "Interval2", 0));
-        comboBox_3->clear();
-        comboBox_3->insertItems(0, QStringList()
-                                << QApplication::translate("Register", "BeiJing", 0)
-                                << QApplication::translate("Register", "ZhengZhou", 0)
-                                << QApplication::translate("Register", "ChangChun", 0)
-                                << QApplication::translate("Register", "ChongQing", 0)
-                                << QApplication::translate("Register", "ChangSha", 0)
-                                << QApplication::translate("Register", "ChengDu", 0)
-                                << QApplication::translate("Register", "FuZhou", 0)
-                                << QApplication::translate("Register", "GuangZhou", 0)
-                                << QApplication::translate("Register", "HeFei", 0)
-                                << QApplication::translate("Register", "HangZhou", 0)
-                                << QApplication::translate("Register", "HaErBin", 0)
-                                << QApplication::translate("Register", "KunMing", 0)
-                                << QApplication::translate("Register", "NanChang", 0)
-                                << QApplication::translate("Register", "NanJing", 0)
-                                << QApplication::translate("Register", "ShangHai", 0)
-                                << QApplication::translate("Register", "ShenYang", 0)
-                                << QApplication::translate("Register", "ShiJiaZhuang", 0)
-                                << QApplication::translate("Register", "WuHan", 0)
-                                );
-        comboBox_3->setCurrentText(QApplication::translate("Register", "BeiJing", 0));
-        lineEdit_4->setPlaceholderText(QApplication::translate("Register", "User Id here", 0));
-        pushButton->setText(QApplication::translate("Register", "OK", 0));
-        pushButton_2->setText(QApplication::translate("Register", "Cancel", 0));
-        //
-        //
-        //
-        //
-        connect(comboBox,SIGNAL(currentTextChanged(QString)),this,SLOT(DueToType(QString)));
-        connect(pushButton,SIGNAL(clicked(bool)),this,SLOT(OK()));
-        connect(pushButton_2,SIGNAL(clicked(bool)),this,SLOT(Cancle()));
-    }
-    //
-    //
-    //
-    //
-    {
-        wid=new QScrollArea(ticket);
-        wid->setGeometry(15,50,1172,500);
-        table_in=new QWidget(wid);
-        table_in->setGeometry(0,0,1172,5+(1+tickets)*100);
-        wid->setWidget(table_in);
-        QFont f;
-        f.setPointSize(12);
-        f.setBold(true);
-        ticket_t=new QTableWidget(1+tickets,9,table_in);
-        ticket_t->setGeometry(0,0,1172,2+(1+tickets)*100);
-        ticket_t->setItem(0,0,new QTableWidgetItem("No."));
-        ticket_t->setItem(0,1,new QTableWidgetItem("Person"));
-        ticket_t->setItem(0,2,new QTableWidgetItem("Date"));
-        ticket_t->setItem(0,3,new QTableWidgetItem("From"));
-        ticket_t->setItem(0,4,new QTableWidgetItem("To"));
-        ticket_t->setItem(0,5,new QTableWidgetItem("Time of\nDeparture"));
-        ticket_t->setItem(0,6,new QTableWidgetItem("Time of\nArrival"));
-        ticket_t->setItem(0,7,new QTableWidgetItem("Price"));
-        ticket_t->setItem(0,8,new QTableWidgetItem("Cancel\norder"));
-        ticket_t->horizontalHeader()->hide();
-        ticket_t->verticalHeader()->hide();
-        ticket_t->setEditTriggers(QAbstractItemView::NoEditTriggers);
-        ticket_t->setSelectionMode(QAbstractItemView::NoSelection);
-        for(int i=0;i<1+tickets;i++)
-            ticket_t->setRowHeight(i,100);
-        for(int i=0;i<9;i++)
-            ticket_t->setColumnWidth(i,130);
-        for(int i=1;i<1+tickets;i++)
-            ticket_t->setItem(i,8,new QTableWidgetItem("Cancel"));
-        ticket_t->setFont(f);
-        ticket_can=new QPushButton("Cancel",ticket);
-        ticket_can->setFont(f);
-        ticket_can->setGeometry(1000,620,150,50);
-    }
-    {
-        //get the cols
-        QFont f;
-        f.setPointSize(12);
-        f.setBold(true);
-        contract_t=new QTableWidget(4,6,contract);
-        contract_t->setGeometry(15,100,1082,402);
-        contract_t->setItem(0,0,new QTableWidgetItem("No."));
-        contract_t->setItem(0,1,new QTableWidgetItem("Person"));
-        contract_t->setItem(0,2,new QTableWidgetItem("TEL"));
-        contract_t->setItem(0,3,new QTableWidgetItem("Type"));
-        contract_t->setItem(0,4,new QTableWidgetItem("To"));
-        contract_t->setItem(0,5,new QTableWidgetItem("Delete"));
-        contract_t->horizontalHeader()->hide();
-        contract_t->verticalHeader()->hide();
-        contract_t->setEditTriggers(QAbstractItemView::NoEditTriggers);
-        contract_t->setSelectionMode(QAbstractItemView::NoSelection);
-        for(int i=0;i<4;i++)
-            contract_t->setRowHeight(i,100);
-        for(int i=0;i<6;i++)
-            contract_t->setColumnWidth(i,180);
-        for(int i=1;i<4;i++)
-            contract_t->setItem(i,5,new QTableWidgetItem("Delete"));
-        contract_t->setFont(f);
-        contract_can=new QPushButton("Cancel",contract);
-        contract_can->setFont(f);
-        contract_can->setGeometry(900,550,200,100);
-        contract_add=new QPushButton("Add Contact",contract);
-        contract_add->setFont(f);
-        contract_add->setGeometry(600,550,200,100);
-    }
-    connect(contract_can,SIGNAL(clicked(bool)),this,SLOT(Cancle()));
-    connect(ticket_can,SIGNAL(clicked(bool)),this,SLOT(Cancle()));
-}
-void Update::DueToType(QString s){
-    if(s!="Student"){
-        comboBox_2->hide();
-        comboBox_3->hide();
-        label_11->hide();
-        label_10->hide();
-        lineEdit_7->hide();
-        lineEdit_8->hide();
-        label_9->hide();
-        label_8->hide();
-        verticalLayout->setContentsMargins(0, 0, 0, 300);
-    }
-    else{
-        comboBox_2->show();
-        comboBox_3->show();
-        label_11->show();
-        label_10->show();
-        lineEdit_7->show();
-        lineEdit_8->show();
-        label_9->show();
-        label_8->show();
-        verticalLayout->setContentsMargins(0, 0, 0, 20);
-    }
+    tab = new QWidget();
+    tab->setObjectName(QStringLiteral("tab"));
+    buttonBox = new QDialogButtonBox(tab);
+    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    buttonBox->setGeometry(QRect(640, 570, 301, 51));
+    buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+    scrollArea = new QScrollArea(tab);
+    scrollArea->setObjectName(QStringLiteral("scrollArea"));
+    scrollArea->setGeometry(QRect(20, 20, 931, 511));
+    scrollArea->setWidgetResizable(true);
+    scrollAreaWidgetContents = new QWidget();
+    scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
+    scrollAreaWidgetContents->setGeometry(QRect(0, -434, 919, 1000));
+    formLayoutWidget = new QWidget(scrollAreaWidgetContents);
+    formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
+    formLayoutWidget->setGeometry(QRect(-1, -1, 931, 511));
+    formLayout = new QFormLayout(formLayoutWidget);
+    formLayout->setSpacing(6);
+    formLayout->setContentsMargins(11, 11, 11, 11);
+    formLayout->setObjectName(QStringLiteral("formLayout"));
+    formLayout->setHorizontalSpacing(60);
+    formLayout->setVerticalSpacing(40);
+    formLayout->setContentsMargins(60, 40, 40, 20);
+    label = new QLabel(formLayoutWidget);
+    label->setObjectName(QStringLiteral("label"));
+    label->setAlignment(Qt::AlignCenter);
+    formLayout->setWidget(0, QFormLayout::LabelRole, label);
+    label_2 = new QLabel(formLayoutWidget);
+    label_2->setObjectName(QStringLiteral("label_2"));
+    label_2->setAlignment(Qt::AlignCenter);
+    formLayout->setWidget(0, QFormLayout::FieldRole, label_2);
+    label_3 = new QLabel(formLayoutWidget);
+    label_3->setObjectName(QStringLiteral("label_3"));
+    label_3->setAlignment(Qt::AlignCenter);
+    formLayout->setWidget(1, QFormLayout::LabelRole, label_3);
+    lineEdit_2 = new QLineEdit(formLayoutWidget);
+    lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+    formLayout->setWidget(1, QFormLayout::FieldRole, lineEdit_2);
+    label_5 = new QLabel(formLayoutWidget);
+    label_5->setObjectName(QStringLiteral("label_5"));
+    label_5->setAlignment(Qt::AlignCenter);
+    formLayout->setWidget(2, QFormLayout::LabelRole, label_5);
+    lineEdit_3 = new QLineEdit(formLayoutWidget);
+    lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+    formLayout->setWidget(2, QFormLayout::FieldRole, lineEdit_3);
+    label_4 = new QLabel(formLayoutWidget);
+    label_4->setObjectName(QStringLiteral("label_4"));
+    formLayout->setWidget(3, QFormLayout::LabelRole, label_4);
+    horizontalLayout = new QHBoxLayout();
+    horizontalLayout->setSpacing(6);
+    horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+    radioButton_2 = new QRadioButton(formLayoutWidget);
+    radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
+    horizontalLayout->addWidget(radioButton_2);
+    radioButton = new QRadioButton(formLayoutWidget);
+    radioButton->setObjectName(QStringLiteral("radioButton"));
+    radioButton->setChecked(true);
+    horizontalLayout->addWidget(radioButton);
+    formLayout->setLayout(3, QFormLayout::FieldRole, horizontalLayout);
+    label_7 = new QLabel(formLayoutWidget);
+    label_7->setObjectName(QStringLiteral("label_7"));
+    formLayout->setWidget(4, QFormLayout::LabelRole, label_7);
+    lineEdit = new QLineEdit(formLayoutWidget);
+    lineEdit->setObjectName(QStringLiteral("lineEdit"));
+    formLayout->setWidget(4, QFormLayout::FieldRole, lineEdit);
+    label_6 = new QLabel(formLayoutWidget);
+    label_6->setObjectName(QStringLiteral("label_6"));
+    formLayout->setWidget(5, QFormLayout::LabelRole, label_6);
+    comboBox = new QComboBox(formLayoutWidget);
+    comboBox->setObjectName(QStringLiteral("comboBox"));
+    formLayout->setWidget(5, QFormLayout::FieldRole, comboBox);
+    widget = new QWidget(scrollAreaWidgetContents);
+    widget->setObjectName(QStringLiteral("widget"));
+    widget->setEnabled(true);
+    widget->setGeometry(QRect(0, 509, 931, 431));
+    formLayoutWidget_2 = new QWidget(widget);
+    formLayoutWidget_2->setObjectName(QStringLiteral("formLayoutWidget_2"));
+    formLayoutWidget_2->setGeometry(QRect(-1, -1, 931, 431));
+    formLayout_2 = new QFormLayout(formLayoutWidget_2);
+    formLayout_2->setSpacing(6);
+    formLayout_2->setContentsMargins(11, 11, 11, 11);
+    formLayout_2->setObjectName(QStringLiteral("formLayout_2"));
+    formLayout_2->setHorizontalSpacing(60);
+    formLayout_2->setVerticalSpacing(40);
+    formLayout_2->setContentsMargins(60, 20, 40, 40);
+    label_8 = new QLabel(formLayoutWidget_2);
+    label_8->setObjectName(QStringLiteral("label_8"));
+    formLayout_2->setWidget(0, QFormLayout::LabelRole, label_8);
+    label_9 = new QLabel(formLayoutWidget_2);
+    label_9->setObjectName(QStringLiteral("label_9"));
+    formLayout_2->setWidget(1, QFormLayout::LabelRole, label_9);
+    label_10 = new QLabel(formLayoutWidget_2);
+    label_10->setObjectName(QStringLiteral("label_10"));
+    formLayout_2->setWidget(2, QFormLayout::LabelRole, label_10);
+    label_11 = new QLabel(formLayoutWidget_2);
+    label_11->setObjectName(QStringLiteral("label_11"));
+    formLayout_2->setWidget(3, QFormLayout::LabelRole, label_11);
+    label_12 = new QLabel(formLayoutWidget_2);
+    label_12->setObjectName(QStringLiteral("label_12"));
+    formLayout_2->setWidget(4, QFormLayout::LabelRole, label_12);
+    lineEdit_4 = new QLineEdit(formLayoutWidget_2);
+    lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+    formLayout_2->setWidget(0, QFormLayout::FieldRole, lineEdit_4);
+    lineEdit_5 = new QLineEdit(formLayoutWidget_2);
+    lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
+    formLayout_2->setWidget(1, QFormLayout::FieldRole, lineEdit_5);
+    lineEdit_6 = new QLineEdit(formLayoutWidget_2);
+    lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+    formLayout_2->setWidget(2, QFormLayout::FieldRole, lineEdit_6);
+    comboBox_2 = new QComboBox(formLayoutWidget_2);
+    comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
+    formLayout_2->setWidget(3, QFormLayout::FieldRole, comboBox_2);
+    comboBox_3 = new QComboBox(formLayoutWidget_2);
+    comboBox_3->setObjectName(QStringLiteral("comboBox_3"));
+    formLayout_2->setWidget(4, QFormLayout::FieldRole, comboBox_3);
+    scrollArea->setWidget(scrollAreaWidgetContents);
+    tabWidget->addTab(tab, QString());
+    tab_2 = new QWidget();
+    tab_2->setObjectName(QStringLiteral("tab_2"));
+    formLayoutWidget_3 = new QWidget(tab_2);
+    formLayoutWidget_3->setObjectName(QStringLiteral("formLayoutWidget_3"));
+    formLayoutWidget_3->setGeometry(QRect(30, 20, 941, 361));
+    formLayout_3 = new QFormLayout(formLayoutWidget_3);
+    formLayout_3->setSpacing(6);
+    formLayout_3->setContentsMargins(11, 11, 11, 11);
+    formLayout_3->setObjectName(QStringLiteral("formLayout_3"));
+    formLayout_3->setHorizontalSpacing(60);
+    formLayout_3->setVerticalSpacing(60);
+    formLayout_3->setContentsMargins(60, 60, 60, 60);
+    label_13 = new QLabel(formLayoutWidget_3);
+    label_13->setObjectName(QStringLiteral("label_13"));
+    formLayout_3->setWidget(0, QFormLayout::LabelRole, label_13);
+    label_14 = new QLabel(formLayoutWidget_3);
+    label_14->setObjectName(QStringLiteral("label_14"));
+    formLayout_3->setWidget(1, QFormLayout::LabelRole, label_14);
+    label_15 = new QLabel(formLayoutWidget_3);
+    label_15->setObjectName(QStringLiteral("label_15"));
+    formLayout_3->setWidget(2, QFormLayout::LabelRole, label_15);
+    lineEdit_7 = new QLineEdit(formLayoutWidget_3);
+    lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
+    formLayout_3->setWidget(0, QFormLayout::FieldRole, lineEdit_7);
+    lineEdit_8 = new QLineEdit(formLayoutWidget_3);
+    lineEdit_8->setObjectName(QStringLiteral("lineEdit_8"));
+    formLayout_3->setWidget(1, QFormLayout::FieldRole, lineEdit_8);
+    lineEdit_9 = new QLineEdit(formLayoutWidget_3);
+    lineEdit_9->setObjectName(QStringLiteral("lineEdit_9"));
+    formLayout_3->setWidget(2, QFormLayout::FieldRole, lineEdit_9);
+    buttonBox_2 = new QDialogButtonBox(tab_2);
+    buttonBox_2->setObjectName(QStringLiteral("buttonBox_2"));
+    buttonBox_2->setGeometry(QRect(640, 570, 301, 51));
+    buttonBox_2->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+    tabWidget->addTab(tab_2, QString());
+    tab_3 = new QWidget();
+    tab_3->setObjectName(QStringLiteral("tab_3"));
+    buttonBox_3 = new QDialogButtonBox(tab_3);
+    buttonBox_3->setObjectName(QStringLiteral("buttonBox_3"));
+    buttonBox_3->setGeometry(QRect(640, 570, 301, 51));
+    buttonBox_3->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+    tabWidget->addTab(tab_3, QString());
+    tab_4 = new QWidget();
+    tab_4->setObjectName(QStringLiteral("tab_4"));
+    buttonBox_4 = new QDialogButtonBox(tab_4);
+    buttonBox_4->setObjectName(QStringLiteral("buttonBox_4"));
+    buttonBox_4->setGeometry(QRect(640, 570, 301, 51));
+    buttonBox_4->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+    tabWidget->addTab(tab_4, QString());
+    this->setWindowTitle(QApplication::translate("Update Info", "Update Info", 0));
+    label->setText(QApplication::translate("Update Info", "User Name", 0));
+    label_2->setText(QApplication::translate("Update Info", "TextLabel", 0));
+    label_3->setText(QApplication::translate("Update Info", "Real Name", 0));
+    lineEdit_2->setPlaceholderText(QApplication::translate("Update Info", "Your Real Name Here", 0));
+    label_5->setText(QApplication::translate("Update Info", "ID", 0));
+    lineEdit_3->setPlaceholderText(QApplication::translate("Update Info", "Your ID Here", 0));
+    label_4->setText(QApplication::translate("Update Info", "TextLabel", 0));
+    radioButton_2->setText(QApplication::translate("Update Info", "Male", 0));
+    radioButton->setText(QApplication::translate("Update Info", "Female", 0));
+    label_7->setText(QApplication::translate("Update Info", "TEL", 0));
+    lineEdit->setPlaceholderText(QApplication::translate("Update Info", "Your Tel Here", 0));
+    label_6->setText(QApplication::translate("Update Info", "Type", 0));
+    comboBox->clear();
+    comboBox->insertItems(0, QStringList()
+                          << QApplication::translate("Update Info", "Adult", 0)
+                          << QApplication::translate("Update Info", "Child", 0)
+                          << QApplication::translate("Update Info", "Student", 0)
+                          );
+    label_8->setText(QApplication::translate("Update Info", "University", 0));
+    label_9->setText(QApplication::translate("Update Info", "Student ID", 0));
+    label_10->setText(QApplication::translate("Update Info", "Grade", 0));
+    label_11->setText(QApplication::translate("Update Info", "Interval 1", 0));
+    label_12->setText(QApplication::translate("Update Info", "Interval 2", 0));
+    lineEdit_4->setPlaceholderText(QApplication::translate("Update Info", "Your University Here", 0));
+    lineEdit_5->setPlaceholderText(QApplication::translate("Update Info", "Your Student ID Here", 0));
+    lineEdit_6->setPlaceholderText(QApplication::translate("Update Info", "Your Grade Here", 0));
+    comboBox_2->clear();
+    comboBox_2->insertItems(0, QStringList()
+                            << QApplication::translate("Update Info", "BeiJing", 0)
+                            << QApplication::translate("Update Info", "ZhengZhou", 0)
+                            << QApplication::translate("Update Info", "ChangChun", 0)
+                            << QApplication::translate("Update Info", "ChongQing", 0)
+                            << QApplication::translate("Update Info", "ChangSha", 0)
+                            << QApplication::translate("Update Info", "ChengDu", 0)
+                            << QApplication::translate("Update Info", "FuZhou", 0)
+                            << QApplication::translate("Update Info", "GuangZhou", 0)
+                            << QApplication::translate("Update Info", "HeFei", 0)
+                            << QApplication::translate("Update Info", "HangZhou", 0)
+                            << QApplication::translate("Update Info", "HaErBin", 0)
+                            << QApplication::translate("Update Info", "KunMing", 0)
+                            << QApplication::translate("Update Info", "NanChang", 0)
+                            << QApplication::translate("Update Info", "NanJing", 0)
+                            << QApplication::translate("Update Info", "ShangHai", 0)
+                            << QApplication::translate("Update Info", "ShenYang", 0)
+                            << QApplication::translate("Update Info", "ShiJiaZhuang", 0)
+                            << QApplication::translate("Update Info", "WuHan", 0)
+                            );
+    comboBox_3->clear();
+    comboBox_3->insertItems(0, QStringList()
+                            << QApplication::translate("Update Info", "BeiJing", 0)
+                            << QApplication::translate("Update Info", "ZhengZhou", 0)
+                            << QApplication::translate("Update Info", "ChangChun", 0)
+                            << QApplication::translate("Update Info", "ChongQing", 0)
+                            << QApplication::translate("Update Info", "ChangSha", 0)
+                            << QApplication::translate("Update Info", "ChengDu", 0)
+                            << QApplication::translate("Update Info", "FuZhou", 0)
+                            << QApplication::translate("Update Info", "GuangZhou", 0)
+                            << QApplication::translate("Update Info", "HeFei", 0)
+                            << QApplication::translate("Update Info", "HangZhou", 0)
+                            << QApplication::translate("Update Info", "HaErBin", 0)
+                            << QApplication::translate("Update Info", "KunMing", 0)
+                            << QApplication::translate("Update Info", "NanChang", 0)
+                            << QApplication::translate("Update Info", "NanJing", 0)
+                            << QApplication::translate("Update Info", "ShangHai", 0)
+                            << QApplication::translate("Update Info", "ShenYang", 0)
+                            << QApplication::translate("Update Info", "ShiJiaZhuang", 0)
+                            << QApplication::translate("Update Info", "WuHan", 0)
+                            );
+    tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Update Info", "Basic Info", 0));
+    label_13->setText(QApplication::translate("Update Info", "Origin Password", 0));
+    label_14->setText(QApplication::translate("Update Info", "New Password", 0));
+    label_15->setText(QApplication::translate("Update Info", "New Password confirm", 0));
+    lineEdit_7->setPlaceholderText(QApplication::translate("Update Info", "Origin Password", 0));
+    lineEdit_8->setPlaceholderText(QApplication::translate("Update Info", "New Password", 0));
+    lineEdit_9->setPlaceholderText(QApplication::translate("Update Info", "New Password Again", 0));
+    tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Update Info", "Change Password", 0));
+    tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("Update Info", "Contact", 0));
+    tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("Update Info", "Ticket", 0));
+    connect(comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(DueToType(int)));
 }
 void Update::show(){
     tabWidget->setCurrentIndex(0);
-    verticalLayout->setContentsMargins(0, 0, 0, 300);
     QMainWindow::show();
-    comboBox_2->hide();
-    comboBox_3->hide();
-    label_11->hide();
-    label_10->hide();
-    lineEdit_7->hide();
-    lineEdit_8->hide();
-    label_9->hide();
-    label_8->hide();
+    widget->hide();
+    scrollAreaWidgetContents->resize(scrollAreaWidgetContents->width(),300);
+}
+void Update::DueToType(int x){
+    qDebug()<<x;
+    if(x==2){
+        scrollAreaWidgetContents->setMinimumHeight(1000);
+        scrollAreaWidgetContents->resize(scrollAreaWidgetContents->width(),1000);
+        widget->show();
+    }
+    else{
+        widget->hide();
+        scrollAreaWidgetContents->setMinimumHeight(300);
+        scrollAreaWidgetContents->resize(scrollAreaWidgetContents->width(),300);
+    }
 }
 
 Update::~Update()

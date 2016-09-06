@@ -6,64 +6,56 @@ class Update : public User
     Q_OBJECT
 private:
     QTabWidget *tabWidget;
-    QWidget *basic;
-    QWidget *ticket;
-    QWidget *contract;
-
-    //
-    QScrollArea *centralWidget;
-    QWidget *widget;
-    QVBoxLayout *verticalLayout;
+    QWidget *tab;
+    QDialogButtonBox *buttonBox;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
+    QWidget *formLayoutWidget;
     QFormLayout *formLayout;
     QLabel *label;
-    QLineEdit *lineEdit;
     QLabel *label_2;
-    QLineEdit *lineEdit_2;
     QLabel *label_3;
-    QLineEdit *lineEdit_3;
-    QLabel *label_6;
-    QLineEdit *lineEdit_6;
-    QLabel *label_4;
+    QLineEdit *lineEdit_2;
     QLabel *label_5;
-    QLineEdit *lineEdit_5;
-    QLabel *label_7;
-    QComboBox *comboBox;
-    QLabel *label_8;
-    QLineEdit *lineEdit_7;
-    QLabel *label_9;
-    QLineEdit *lineEdit_8;
-    QLabel *label_10;
-    QComboBox *comboBox_2;
-    QLabel *label_11;
-    QComboBox *comboBox_3;
-    QLineEdit *lineEdit_4;
+    QLineEdit *lineEdit_3;
+    QLabel *label_4;
     QHBoxLayout *horizontalLayout;
-    QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton;
-    QSpacerItem *horizontalSpacer_2;
-    QPushButton *pushButton_2;
-    QSpacerItem *horizontalSpacer_3;
-    QWidget* table_in;
-    QTableWidget* ticket_t;
-    QTableWidget* contract_t;
-    QPushButton* ticket_can;
-    QPushButton* contract_can;
-    QPushButton* contract_add;
-    QScrollArea *wid;
+    QRadioButton *radioButton_2;
+    QRadioButton *radioButton;
+    QLabel *label_7;
+    QLineEdit *lineEdit;
+    QLabel *label_6;
+    QComboBox *comboBox;
+    QWidget *widget;
+    QWidget *formLayoutWidget_2;
+    QFormLayout *formLayout_2;
+    QLabel *label_8;
+    QLabel *label_9;
+    QLabel *label_10;
+    QLabel *label_11;
+    QLabel *label_12;
+    QLineEdit *lineEdit_4;
+    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_6;
+    QComboBox *comboBox_2;
+    QComboBox *comboBox_3;
+    QWidget *tab_2;
+    QWidget *formLayoutWidget_3;
+    QFormLayout *formLayout_3;
+    QLabel *label_13;
+    QLabel *label_14;
+    QLabel *label_15;
+    QLineEdit *lineEdit_7;
+    QLineEdit *lineEdit_8;
+    QLineEdit *lineEdit_9;
+    QDialogButtonBox *buttonBox_2;
+    QWidget *tab_3;
+    QDialogButtonBox *buttonBox_3;
+    QWidget *tab_4;
+    QDialogButtonBox *buttonBox_4;
 private slots:
-    void DueToType(QString s);
-    void OK(){
-        qDebug()<<"A signal send";
-        OK_Send();
-    }
-
-    void Cancle(){
-        Cancle_Send();
-    qDebug()<<"A signal send";
-}
+    void DueToType(int);
 signals:
-    void OK_Send();
-    void Cancle_Send();
 public:
     Update(QWidget *parent = 0);
     ~Update();
