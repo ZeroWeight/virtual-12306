@@ -1,6 +1,6 @@
 #include "confirm.h"
 Confirm::Confirm(QWidget *parent)
-    : QMainWindow(parent)
+    : User(parent)
 {
     seat=new QTableWidget(10,21,this);
     seat->setGeometry(101,601,842,410);

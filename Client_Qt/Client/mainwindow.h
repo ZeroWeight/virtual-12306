@@ -22,7 +22,7 @@ private:
     Pay* pay;
     QuickQuery* query;
     Register* _register;
-    //Update* update;
+    Update* update;
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();

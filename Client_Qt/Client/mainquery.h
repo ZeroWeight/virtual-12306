@@ -1,11 +1,12 @@
 #ifndef MAINQUERY_H
 #define MAINQUERY_H
+#include "publicbaseclass.h"
 #include "box.h"
 #include "date.h"
 #include "supertag.h"
 #include "table.h"
 #define ZW_DEBUG
-class MainQuery : public QMainWindow
+class MainQuery : public User
 {
     Q_OBJECT
 private:
@@ -31,8 +32,14 @@ private:
     SuperTag* log_out;
     SuperTag* reg;
     SuperTag* name;
+    QPushButton* ok;
 private slots:
     void Reload(int rank,bool m);
+    void Log_out(){
+        is_log_in=false;
+    }
+    void Query();
+    void ReadyBuy(QString s);
 public:
     MainQuery(QWidget *parent = 0);
     ~MainQuery();
@@ -41,16 +48,10 @@ public slots:
 signals:
     void Log_in();
     void Name();
-    void Log_out();
     void Register();
-    void Buy();
-    void Route();
-#ifdef ZW_DEBUG
-private slots:
-    void Debug(){
-        qDebug()<<"A signal emit";
-    }
-#endif
+    void ok_click(int des,int src,QDate date);
+    void Buy(QString,int des,int src,QDate date);
+    void Route(QString);
 };
 
 

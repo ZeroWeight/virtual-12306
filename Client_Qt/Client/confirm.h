@@ -1,7 +1,7 @@
 #ifndef CLIENT_H
 #define CLIENT_H
-#include "basic.h"
-class Confirm : public QMainWindow
+#include "publicbaseclass.h"
+class Confirm : public User
 {
     Q_OBJECT
 private:

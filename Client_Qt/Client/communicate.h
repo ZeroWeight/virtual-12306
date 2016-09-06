@@ -2,28 +2,25 @@
 #define COMMUNICATE_H
 
 #include "publicbaseclass.h"
-class Communicate:public QObject {
+class Communicate:public User {
     Q_OBJECT
-public:
-    Communicate(QObject *parent = 0);
-public slots:
-    void Send(Message &message);
-
-signals:
-    void LogIn_(UndefArgument);
-    void MainQuery_(UndefArgument);
-    void Confirm_(UndefArgument);
 private:
-    MODE mode;
-    char* buffer;
-    Message* message;
-    QTcpSocket *socket;
-    bool sending;
-    void DeCoding();
+   QTcpSocket* socket;
+   MODE m;
+   char* buffer;
+   char* temp;
+   bool ack;
 private slots:
-    void GetConnect();
-    void LostConnect();
-    void Listen();
+   void listen();
+public:
+   Communicate();
+public slots:
+   void get_from_query(int,int,QDate);
+   void log_in(QString,QString);
+   void reg(QString,QString,QString,QString,GENDER,TYPE,QString,int,QString,Station,Station);
+   void get_from_main(int,int,QDate);
+   void buy_from_main(QString,int,int,QDate);
+   void route_from_main(QString);
 };
 
 #endif // COMMUNICATE_H

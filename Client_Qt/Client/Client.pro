@@ -14,7 +14,6 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    communicate.cpp \
     box.cpp \
     date.cpp \
     quickquery.cpp \
@@ -30,7 +29,9 @@ SOURCES += main.cpp\
     buy.cpp \
     confirm.cpp \
     pay.cpp \
-    update.cpp
+    update.cpp \
+    communicate.cpp \
+    publicbaseclass.cpp
 
 HEADERS  += mainwindow.h \
     basic.h \
@@ -44,7 +45,6 @@ HEADERS  += mainwindow.h \
     publicbaseclass.h \
     mainquery.h \
     update.h \
-    decoding.hpp \
     box.h \
     date.h \
     station.hpp \

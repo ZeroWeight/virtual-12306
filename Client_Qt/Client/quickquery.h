@@ -4,7 +4,7 @@
 #include "date.h"
 #include "supertag.h"
 #include "publicbaseclass.h"
-class QuickQuery : public PublicBaseClass
+class QuickQuery : public User
 {
     Q_OBJECT
 private:
@@ -25,15 +25,14 @@ public:
 public slots:
     void show();
 signals:
-    void ok_click();
+    void ok_click(int des,int src,QDate date);
     void login_click();
     void reg_click();
     void name_click();
-#ifdef ZW_DEBUG_
 private slots:
-    void Debug(){
-        qDebug()<<"A singal is emit";
+    void ok();
+    void logout_click(){
+        is_log_in=false;
     }
-#endif
 };
 #endif // QUICKQUERY_H

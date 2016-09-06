@@ -2,7 +2,7 @@
 #include <QHeaderView>
 #include <QScrollBar>
 MainQuery::MainQuery(QWidget *parent)
-    : QMainWindow(parent)
+    : User(parent)
 {
     count=5;//temp
     train_l=new QLabel("Train Level",this);
@@ -22,28 +22,20 @@ MainQuery::MainQuery(QWidget *parent)
     log_out=new SuperTag("Log Out",this);
     date=new Date(this);
     reg=new SuperTag("Register",this);
-    name=new SuperTag("",this);
+    name=new SuperTag("Name",this);
     table=new Table*[count];
     for(int i=0;i<count;i++){
         table[i]=new Table(i,table_w);
         connect(table[i],SIGNAL(Reload(int,bool)),this,SLOT(Reload(int,bool)));
-        connect(table[i],SIGNAL(Buy(QString)),this,SIGNAL(Buy()));
-        connect(table[i],SIGNAL(Route(QString)),this,SIGNAL(Route()));
+        connect(table[i],SIGNAL(Buy(QString)),this,SLOT(ReadyBuy(QString)));
+        connect(table[i],SIGNAL(Route(QString)),this,SIGNAL(Route(QString)));
     }
     src=new Box("Enter your Depart",this);
     des=new Box("Enter your destination",this);
     connect(name,SIGNAL(Click()),this,SIGNAL(Name()));
     connect(log_in,SIGNAL(Click()),this,SIGNAL(Log_in()));
-    connect(log_out,SIGNAL(Click()),this,SIGNAL(Log_out()));
+    connect(log_out,SIGNAL(Click()),this,SLOT(Log_out()));
     connect(reg,SIGNAL(Click()),this,SIGNAL(Register()));
-#ifdef ZW_DEBUG
-    connect(this,SIGNAL(Buy()),this,SLOT(Debug()));
-    connect(this,SIGNAL(Route()),this,SLOT(Debug()));
-    connect(this,SIGNAL(Log_in()),this,SLOT(Debug()));
-    connect(this,SIGNAL(Log_out()),this,SLOT(Debug()));
-    connect(this,SIGNAL(Name()),this,SLOT(Debug()));
-    connect(this,SIGNAL(Register()),this,SLOT(Debug()));
-#endif
     //
     table_a->setWidget(table_w);
     table_w->setGeometry(QRect(50,200,1202,count*100+110));
@@ -85,6 +77,9 @@ MainQuery::MainQuery(QWidget *parent)
         table[i]->setGeometry(0,(i+1)*header->rowHeight(0),
                              header->columnCount()*header->columnWidth(0)+2,
                               2*header->rowCount()*header->rowHeight(0)+2);
+    ok=new QPushButton("Query!",this);
+    ok->setGeometry(1300,600,200,100);
+    connect(ok,SIGNAL(clicked(bool)),this,SLOT(Query()));
     //
 
 
@@ -105,7 +100,7 @@ void MainQuery::show(){
     header->show();
     for(int i=0;i<count;i++)
         table[i]->show();
-    if(1){
+    if(!is_log_in){
         log_in->show();
         reg->show();
         log_out->hide();
@@ -145,4 +140,68 @@ void MainQuery::Reload(int rank, bool m){
                                  table_w->height()-100);
 
     }
+}
+void MainQuery::Query(){
+    int to,from;
+    for(from=0;from<ALL;from++)
+        if(NAME[from].toUpper()==QString(src->text()).toUpper())
+            break;
+    if(from==ALL){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("Departure invaild");
+        a->show();
+        src->clear();
+        return ;
+    }
+    for(to=0;to<ALL;to++)
+        if(NAME[to].toUpper()==QString(des->text()).toUpper())
+            break;
+    if(to==ALL){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("Destination invaild");
+        a->show();
+        des->clear();
+        return ;
+    }
+    if(to==from){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("The Destination and the Departuature are the same station");
+        a->show();
+        des->clear();
+        src->clear();
+        return ;
+    }
+    ok_click(to,from,date->date());
+}
+void MainQuery::ReadyBuy(QString s){
+    int to,from;
+    for(from=0;from<ALL;from++)
+        if(NAME[from].toUpper()==QString(src->text()).toUpper())
+            break;
+    if(from==ALL){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("Departure invaild");
+        a->show();
+        src->clear();
+        return ;
+    }
+    for(to=0;to<ALL;to++)
+        if(NAME[to].toUpper()==QString(des->text()).toUpper())
+            break;
+    if(to==ALL){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("Destination invaild");
+        a->show();
+        des->clear();
+        return ;
+    }
+    if(to==from){
+        QMessageBox* a=new QMessageBox(this);
+        a->setText("The Destination and the Departuature are the same station");
+        a->show();
+        des->clear();
+        src->clear();
+        return ;
+    }
+    Buy(s,to,from,date->date());
 }

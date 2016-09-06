@@ -22,7 +22,10 @@
 #include <QList>
 #include <QListWidget>
 #include <QMainWindow>
+#include <QMessageBox>
 #include <QMouseEvent>
+#include <QtNetwork>
+#include <QRadioButton>
 #include <QTableWidget>
 #include <QtNetwork>
 #include <QObject>
@@ -31,19 +34,39 @@
 #include <QScrollBar>
 #include <QSpacerItem>
 #include <QString>
+#include <QVariant>
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QWidgetItem>
-#include <QVariant>
-#define UndefArgument void
-#define UndefTypeValue
-#define MAXBUFFERSIZE 256
-#define BUFFERSIZE 64
-#define SHORTBUFFERSIZE 16
+#include <string>
+#define BUFFER 1024
 #define ZW_DEBUG_
-#define ACK "0123456879"
+#define ACK "0123456789\0"
 enum MODE{
     NONE=0,
+    Q_S,
+    L_I,
+    REG,
+    M_S,
+    M_B,
+    M_R,
+};
+enum TYPE{
+    ADULT,
+    CHILD,
+    STUDENT,
+};
+enum GENDER{
+    MALE,
+    FEMALE
+};
+enum AUTH{
+    USER,
+    SU
+};
+enum SEAT_TYPE{
+    SIT,
+    SLEEP
 };
 
 class Message{

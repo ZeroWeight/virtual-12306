@@ -1,7 +1,7 @@
 #ifndef BUY_H
 #define BUY_H
 #include "publicbaseclass.h"
-class Buy : public QMainWindow
+class Buy : public User
 {
     Q_OBJECT
 private:
@@ -51,6 +51,13 @@ private:
     QDialogButtonBox *buttonBox;
     QSpacerItem *horizontalSpacer_19;
     QSpacerItem *verticalSpacer_6;
+    QCheckBox* box[4];
+    QComboBox* check;
+private slots:
+    void to_confirm();
+signals:
+    void c();
+    void ok(QString trainid,QDate date,QString id[4],SEAT_TYPE type);
 public:
     Buy(QWidget *parent = 0);
     ~Buy();

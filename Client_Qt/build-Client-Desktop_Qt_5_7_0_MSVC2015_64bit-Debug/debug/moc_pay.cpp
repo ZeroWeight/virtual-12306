@@ -74,7 +74,7 @@ void Pay::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
 }
 
 const QMetaObject Pay::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_Pay.data,
+    { &User::staticMetaObject, qt_meta_stringdata_Pay.data,
       qt_meta_data_Pay,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
@@ -89,12 +89,12 @@ void *Pay::qt_metacast(const char *_clname)
     if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_Pay.stringdata0))
         return static_cast<void*>(const_cast< Pay*>(this));
-    return QMainWindow::qt_metacast(_clname);
+    return User::qt_metacast(_clname);
 }
 
 int Pay::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = User::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

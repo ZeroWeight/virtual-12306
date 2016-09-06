@@ -1,7 +1,7 @@
 #ifndef PAY_H
 #define PAY_H
 #include "publicbaseclass.h"
-class Pay : public QMainWindow
+class Pay : public User
 {
     Q_OBJECT
 private:
